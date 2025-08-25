@@ -1,0 +1,184 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Claude Code 项目模板规范",
+  "description": "定义项目类型模板的标准结构和字段",
+  "type": "object",
+  
+  "required": [
+    "templateType", 
+    "description", 
+    "version",
+    "directoryStructure",
+    "fileNamingRules", 
+    "structureRules",
+    "claudeCodeReminders"
+  ],
+  
+  "properties": {
+    "templateType": {
+      "type": "string",
+      "description": "项目模板类型标识符",
+      "examples": ["react-app", "vue-app", "api-service"]
+    },
+    
+    "description": {
+      "type": "string", 
+      "description": "项目模板描述信息"
+    },
+    
+    "version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$",
+      "description": "模板版本号，遵循 semver 规范"
+    },
+    
+    "directoryStructure": {
+      "type": "object",
+      "required": ["required"],
+      "properties": {
+        "required": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "必须创建的目录列表"
+        },
+        "optional": {
+          "type": "array", 
+          "items": { "type": "string" },
+          "description": "可选的目录列表"
+        },
+        "forbidden": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "禁止使用的目录名称"
+        }
+      }
+    },
+    
+    "fileNamingRules": {
+      "type": "object",
+      "description": "各类型文件的命名规范",
+      "patternProperties": {
+        "^[a-zA-Z]+$": {
+          "type": "object",
+          "required": ["pattern", "extensions"],
+          "properties": {
+            "pattern": {
+              "type": "string",
+              "enum": ["PascalCase", "camelCase", "kebab-case", "snake_case", "UPPER_CASE"],
+              "description": "命名模式"
+            },
+            "extensions": {
+              "type": "array",
+              "items": { "type": "string" },
+              "description": "允许的文件扩展名"
+            },
+            "examples": {
+              "type": "array",
+              "items": { "type": "string" },
+              "description": "命名示例"
+            },
+            "prefix": {
+              "type": "string",
+              "description": "文件名前缀要求"
+            },
+            "suffix": {
+              "type": "string", 
+              "description": "文件名后缀要求"
+            },
+            "structure": {
+              "type": "string",
+              "description": "文件组织结构说明"
+            }
+          }
+        }
+      }
+    },
+    
+    "structureRules": {
+      "type": "array",
+      "description": "目录结构规则约束",
+      "items": {
+        "type": "object",
+        "required": ["rule", "description", "violation", "correct"],
+        "properties": {
+          "rule": {
+            "type": "string",
+            "description": "规则标识符"
+          },
+          "description": {
+            "type": "string",
+            "description": "规则详细描述"
+          },
+          "violation": {
+            "type": "string", 
+            "description": "违规行为示例"
+          },
+          "correct": {
+            "type": "string",
+            "description": "正确做法示例"
+          }
+        }
+      }
+    },
+    
+    "exampleFiles": {
+      "type": "object",
+      "description": "示例文件内容定义",
+      "patternProperties": {
+        "^[a-zA-Z0-9/_.-]+$": {
+          "type": "object",
+          "required": ["content", "description"],
+          "properties": {
+            "content": {
+              "type": "string",
+              "description": "文件内容"
+            },
+            "description": {
+              "type": "string",
+              "description": "文件说明"
+            }
+          }
+        }
+      }
+    },
+    
+    "claudeCodeReminders": {
+      "type": "object",
+      "required": ["strictMode", "reminders"],
+      "properties": {
+        "strictMode": {
+          "type": "boolean",
+          "description": "是否启用严格模式"
+        },
+        "autoValidation": {
+          "type": "boolean", 
+          "description": "是否启用自动验证"
+        },
+        "reminders": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Claude Code 提醒信息列表"
+        }
+      }
+    },
+    
+    "commonViolations": {
+      "type": "array",
+      "description": "常见违规行为和修复方案",
+      "items": {
+        "type": "object",
+        "required": ["violation", "fix"],
+        "properties": {
+          "violation": {
+            "type": "string",
+            "description": "违规行为描述"
+          },
+          "fix": {
+            "type": "string",
+            "description": "修复方案"
+          }
+        }
+      }
+    }
+  }
+}

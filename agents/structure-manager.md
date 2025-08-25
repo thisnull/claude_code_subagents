@@ -65,19 +65,187 @@
 - **后端开发 Agent**: 验证 API 文件结构和命名
 - **测试 Agent**: 维护测试文件与源文件的镜像结构
 
-## 配置和定制
+## 模板选择和应用逻辑
 
-### 项目类型模板
-支持的项目类型及其结构模板：
-- `react-app`: React 单页应用结构
-- `vue-app`: Vue.js 应用结构  
-- `fullstack-web`: 全栈 Web 项目结构
-- `api-service`: 后端 API 服务结构
-- `mobile-app`: 移动应用项目结构
-- `library`: 组件库/工具库结构
+### 1. 模板加载流程
+```javascript
+// structure-manager 接收 /init-project 命令时的处理逻辑
 
-### 灵活配置选项
-- 自定义命名规范（PascalCase/camelCase/kebab-case）
-- 可配置的目录层级限制
-- 项目特定的文件类型约束
-- 团队协作规范集成
+function initProject(projectType, projectName) {
+  // 1. 验证输入参数
+  if (!isValidProjectType(projectType)) {
+    throw new Error(`不支持的项目类型: ${projectType}`)
+  }
+  
+  if (!isValidProjectName(projectName)) {
+    throw new Error(`无效的项目名称: ${projectName}`)
+  }
+  
+  // 2. 加载对应的模板文件
+  const templatePath = `agents/templates/${projectType}.json`
+  const template = loadTemplate(templatePath)
+  
+  // 3. 应用模板创建项目结构
+  return applyTemplate(template, projectName)
+}
+```
+
+### 2. 模板应用步骤
+```javascript
+function applyTemplate(template, projectName) {
+  // Step 1: 创建必需目录结构
+  template.directoryStructure.required.forEach(dir => {
+    createDirectory(dir)
+  })
+  
+  // Step 2: 生成示例文件
+  Object.entries(template.exampleFiles).forEach(([filePath, fileConfig]) => {
+    writeFile(filePath, fileConfig.content)
+  })
+  
+  // Step 3: 创建项目特定的结构配置文件
+  const projectConfig = {
+    projectType: template.templateType,
+    projectName: projectName,
+    createdAt: new Date().toISOString(),
+    directoryStructure: template.directoryStructure,
+    fileNamingRules: template.fileNamingRules,
+    structureRules: template.structureRules,
+    claudeCodeBehavior: {
+      strictMode: template.claudeCodeReminders.strictMode,
+      autoCallStructureManager: true,
+      operationValidation: {
+        beforeFileCreation: { enabled: true },
+        beforeDirectoryCreation: { enabled: true }
+      }
+    }
+  }
+  
+  writeFile('.claude-structure.json', JSON.stringify(projectConfig, null, 2))
+  
+  // Step 4: 更新/创建 CLAUDE.md 文件
+  updateClaudeMd(template, projectName)
+  
+  // Step 5: 验证初始化结果
+  validateProjectStructure()
+}
+```
+
+### 3. CLAUDE.md 系统提醒生成
+```javascript
+function updateClaudeMd(template, projectName) {
+  const systemReminder = `<system-reminder>
+🏗️ **${template.description} - 项目目录结构约束检查**
+
+项目名称：${projectName}
+项目类型：${template.templateType}
+严格模式：已启用
+
+在创建任何文件或目录前，请严格遵循以下流程：
+
+1. **强制验证步骤**：
+   - 首先读取项目根目录的 .claude-structure.json 文件
+   - 确认目标路径是否符合 ${template.templateType} 项目结构规范
+   - 验证文件命名是否遵循约定
+   
+2. **必须调用 structure-manager subagent**：
+   - 如果不确定操作是否符合规范，必须调用 structure-manager subagent
+   - 传递操作详情给 subagent 进行验证
+   - 等待 subagent 确认后再执行操作
+
+**当前项目特定约束**：
+${template.claudeCodeReminders.reminders.map(reminder => `- ${reminder}`).join('\n')}
+
+**常见违规行为提醒**：
+${template.commonViolations ? template.commonViolations.map(v => `❌ ${v.violation} → ✅ ${v.fix}`).join('\n') : ''}
+</system-reminder>`
+
+  const claudeMdContent = generateClaudeMdContent(systemReminder, template)
+  writeFile('CLAUDE.md', claudeMdContent)
+}
+```
+
+### 4. 实时验证机制
+```javascript
+// structure-manager 在接收到验证请求时的处理逻辑
+function validateFileOperation(operation, targetPath, fileName) {
+  // 1. 加载项目配置
+  const projectConfig = loadProjectConfig('.claude-structure.json')
+  
+  // 2. 验证路径是否符合目录结构规范
+  const pathValidation = validatePath(targetPath, projectConfig.directoryStructure)
+  if (!pathValidation.isValid) {
+    return {
+      valid: false,
+      error: pathValidation.error,
+      suggestion: pathValidation.suggestion
+    }
+  }
+  
+  // 3. 验证文件命名是否符合规范
+  const nameValidation = validateFileName(fileName, targetPath, projectConfig.fileNamingRules)
+  if (!nameValidation.isValid) {
+    return {
+      valid: false, 
+      error: nameValidation.error,
+      suggestion: nameValidation.suggestion
+    }
+  }
+  
+  // 4. 检查是否违反结构规则
+  const ruleValidation = validateStructureRules(targetPath, fileName, projectConfig.structureRules)
+  if (!ruleValidation.isValid) {
+    return {
+      valid: false,
+      error: ruleValidation.error,
+      suggestion: ruleValidation.suggestion  
+    }
+  }
+  
+  return { valid: true, message: '操作符合项目结构规范' }
+}
+```
+
+### 5. 智能修复建议
+```javascript
+function generateFixSuggestion(violation, projectConfig) {
+  // 根据违规类型提供具体的修复建议
+  const suggestions = {
+    'wrong-directory': (path, correctPath) => 
+      `文件应该放在 ${correctPath} 目录，建议移动到正确位置`,
+    'wrong-naming': (fileName, correctName) => 
+      `文件名应该使用 ${correctName} 命名，建议重命名`,
+    'missing-extension': (fileName, allowedExts) => 
+      `文件扩展名应该是 ${allowedExts.join(' 或 ')} 之一`,
+    'deep-nesting': (path, maxDepth) => 
+      `目录嵌套过深，建议重新组织结构，最大深度为 ${maxDepth} 层`
+  }
+  
+  return suggestions[violation.type](violation.details)
+}
+```
+
+## 实际使用示例
+
+### 用户执行命令
+```bash
+/init-project react-app my-dashboard
+```
+
+### structure-manager 执行过程
+1. **验证参数**: react-app 是支持的类型，my-dashboard 是有效名称
+2. **加载模板**: 读取 `agents/templates/react-app.json`
+3. **创建目录**: src/, src/components/, src/pages/, src/hooks/, src/utils/, src/api/, tests/
+4. **生成文件**: 创建示例组件、Hook、工具函数等
+5. **配置约束**: 生成 .claude-structure.json 和更新 CLAUDE.md
+6. **验证结果**: 确认所有创建的内容符合 react-app 规范
+
+### 后续开发中的自动验证
+```
+用户: "创建一个用户卡片组件"
+→ Claude Code 读取 CLAUDE.md 系统提醒
+→ 自动调用 structure-manager subagent
+→ subagent 验证: 应创建 src/components/UserCard.jsx
+→ 确认符合 PascalCase 规范和目录约束
+→ 执行创建操作
+```
