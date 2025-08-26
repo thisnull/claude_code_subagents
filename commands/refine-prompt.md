@@ -133,20 +133,6 @@ The system automatically detects relevant scenarios by matching keywords:
 - Still provides common workflow reminders
 - Suggests creating PROMPT_SCENARIOS.md for customization
 
-## Benefits
-
-- **Fast Generation**: Lightweight, proven prompt refinement
-- **Complete Workflow**: Technical details + project requirements integrated
-- **Never Forget**: Automatic workflow reminders for every refinement
-- **Project Aware**: Customizable scenarios via PROMPT_SCENARIOS.md
-- **Team Consistency**: Standardized workflow enforcement
-- **History Tracking**: All refinements saved to refined-prompt/ directory
-- **Organized Archive**: Complete refinement history in one location
-- **Easy Reference**: Timestamped files for easy browsing
-- **Reusable Content**: Copy from previous refinements
-- **Version Control Friendly**: Markdown files work well with git
-- **Search Friendly**: Easy to grep through refinement history
-
 ## Implementation Details
 
 ### Directory Creation Process
