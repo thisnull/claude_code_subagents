@@ -1,6 +1,6 @@
 ---
 name: python-project-initializer
-description: Python project initialization specialist with intelligent document analysis capabilities. Analyzes requirement documents, design specs, and project plans to automatically determine project type and generate appropriate code architecture following user's established preferences for uv, src layout, pytest, and structured logging.
+description: Python project initialization specialist with intelligent markdown document analysis capabilities. Analyzes requirement documents, design specs, and project plans (markdown format only) to automatically determine project type and generate appropriate code architecture following user's established preferences for uv, src layout, pytest, and structured logging.
 category: language-specialists
 ---
 

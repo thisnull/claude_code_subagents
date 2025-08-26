@@ -13,10 +13,10 @@ Initialize a high-quality Python project following your established preferences 
 # Basic initialization (interactive project type selection)
 /init-python-project
 
-# Intelligent initialization with document analysis
+# Intelligent initialization with markdown document analysis
 /init-python-project requirements.md
-/init-python-project PRD.md design-doc.pdf architecture.txt
-/init-python-project README.md project-spec.docx api-design.yaml
+/init-python-project PRD.md design-doc.md architecture.md
+/init-python-project README.md project-spec.md api-design.md
 ```
 
 ## Execution Flow
@@ -37,11 +37,10 @@ When user executes /init-python-project [documents...]:
 The command can analyze various document types to understand your project:
 
 ### Supported Document Types
-- **Requirements Documents**: `.md`, `.txt`, `.docx`, `.pdf`
-- **Design Documents**: Architecture specs, system design, API documentation
-- **Project Plans**: Development roadmaps, feature specifications
-- **Existing Code**: Sample files, prototypes, legacy code references
-- **Configuration Files**: API schemas (`.yaml`, `.json`), database schemas
+- **Markdown Documents**: `.md` format only
+- **Common Document Types**: Requirements docs, design specs, README files, API documentation
+- **Project Plans**: Development roadmaps, feature specifications (in markdown)
+- **Technical Specs**: Architecture docs, system design, database schemas (in markdown)
 
 ### Analysis Capabilities
 - **Project Type Detection**: Web API, CLI tool, data pipeline, microservice, library, etc.
@@ -65,7 +64,7 @@ src/myproject/
 └── models/        # Shared data models
 ```
 
-**Input**: `data-pipeline-spec.pdf` describing ETL workflows
+**Input**: `data-pipeline-spec.md` describing ETL workflows
 **Result**: Data pipeline project with modules:
 ```
 src/myproject/
