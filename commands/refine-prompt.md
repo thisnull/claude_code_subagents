@@ -1,97 +1,123 @@
 ---
 name: refine-prompt
-description: Simple and fast prompt refinement tool that transforms brief user inputs into detailed, actionable instructions. Returns the refined prompt for you to review and use, rather than executing it directly.
-allowed-tools: none
-argument-hint: "<brief_prompt>" (the prompt you want to refine and clarify)
+description: Simple and fast prompt refinement tool that transforms brief user inputs into detailed, actionable instructions. Optionally adds project-specific workflow requirements from PROMPT_SCENARIOS.md when --with-scenarios flag is used.
+allowed-tools: Read
+argument-hint: "<brief_prompt>" [--with-scenarios] (add --with-scenarios to include project workflow requirements)
 ---
 
-Transform your brief prompts into clear, detailed instructions and return them for your review and use.
+Transform your brief prompts into clear, detailed instructions and optionally add project workflow requirements.
 
 **IMPORTANT: This command generates and displays refined prompts for you to copy and use - it does NOT execute the prompts.**
 
 ## Command Usage
 
 ```bash
-# Generate refined prompt for authentication
+# Basic prompt refinement (Step 1 only)
 /refine-prompt "Add user authentication"
-# → Returns detailed authentication requirements for you to copy
+# → Returns detailed technical requirements only
 
-# Generate refined prompt for bug fixing  
-/refine-prompt "Fix login issue"
-# → Returns detailed debugging steps for you to copy
+# Enhanced with project scenarios (Step 1 + Step 2)
+/refine-prompt "Add user authentication" --with-scenarios
+# → Returns technical requirements + project workflow reminders
 
-# Generate refined prompt for performance improvement
-/refine-prompt "Improve app performance"
-# → Returns detailed optimization requirements for you to copy
+# Bug fixing with workflows
+/refine-prompt "Fix login issue" --with-scenarios
+# → Returns debugging steps + testing and documentation requirements
 ```
 
-## What This Command Does
+## Two-Step Enhancement Process
 
-**Simple Generation Process:**
-1. **Analyze** your brief input for intent and scope
-2. **Expand** with specific technical details and actionable steps
-3. **Clarify** requirements, constraints, and expected outcomes
-4. **Display** the refined prompt for you to copy and use
+### Step 1: Prompt Refinement (Always)
+- **Analyze** your brief input for intent and scope
+- **Expand** with specific technical details and actionable steps  
+- **Clarify** requirements, constraints, and expected outcomes
+- **Format** as detailed, actionable instructions
 
-**Output Format:**
+### Step 2: Scenario Enhancement (Optional with --with-scenarios)
+- **Read** PROMPT_SCENARIOS.md for project-specific workflows
+- **Detect** matching scenarios based on keywords in refined prompt
+- **Append** relevant workflow requirements as additional sections
+- **Integrate** seamlessly with technical requirements
+
+## Output Formats
+
+### Basic Output (without --with-scenarios)
 ```markdown
 # 🔄 Refined Prompt (Ready to Copy)
 
-[Your detailed, expanded prompt with specific requirements and actionable steps]
+[Detailed technical requirements and implementation steps]
 
 ---
-## 📋 How to Use
+## 📋 How to Use  
 1. Review the refined prompt above
 2. Copy it if it meets your needs
 3. Paste it into a new Claude Code session
 4. Modify as needed for your specific requirements
 ```
 
-## Example Transformation
-
-**Your Input:** "Add user authentication"
-
-**Generated Output:**
+### Enhanced Output (with --with-scenarios)
 ```markdown
-# 🔄 Refined Prompt (Ready to Copy)
+# 🚀 Enhanced Prompt (Ready to Copy)
 
-Implement a comprehensive user authentication system:
+## 📋 Technical Requirements
+[Detailed technical requirements and implementation steps from Step 1]
 
-Technical Requirements:
-- Design secure login/logout functionality with session management
-- Implement password hashing using bcrypt with proper salt rounds  
-- Create JWT token-based authentication with refresh token support
-- Add input validation for email/username and password requirements
-- Design user registration flow with email verification
-- Implement "forgot password" functionality with secure reset tokens
+## ⚠️ Project Workflow Requirements
+Based on detected scenarios: [Scenario Names]
 
-Implementation Steps:
-- Set up authentication middleware for protected routes
-- Create user model with secure password storage
-- Design login/logout API endpoints with proper error handling
-- Add authentication state management in frontend
-- Create user registration and profile management interfaces
-- Implement proper session timeout and security headers
+### 🎯 Feature Development
+- 开发前更新需求文档和设计文档
+- 开发完成后编写单元测试和集成测试
 
-Quality Requirements:
-- Write unit tests for authentication functions
-- Add integration tests for login/logout flows
-- Ensure HTTPS enforcement and secure cookie settings
-- Document authentication API endpoints and usage
+### 🎯 API Changes
+- 更新API文档和接口规范
+- 进行API集成测试和契约测试
 
 ---
 ## 📋 How to Use
-1. Review the refined prompt above
-2. Copy it if it meets your needs  
-3. Paste it into a new Claude Code session
-4. Modify as needed for your specific requirements
+1. Review both technical and workflow requirements
+2. Copy the entire enhanced prompt if it looks good
+3. Use it in your next Claude Code session  
+4. Modify any parts that don't fit your needs
 ```
+
+## Scenario Detection (when --with-scenarios is used)
+
+The system automatically detects relevant scenarios by matching keywords:
+
+**Example Keywords:**
+- **Feature Development**: implement, add, create, build, develop, new, feature
+- **Bug Fixing**: fix, bug, issue, problem, error, debug
+- **API Changes**: api, endpoint, route, rest, interface  
+- **Database Changes**: database, schema, migration, table, column
+- **Testing**: test, testing, unit, integration, e2e
+
+## PROMPT_SCENARIOS.md Integration
+
+When using `--with-scenarios`:
+
+**If PROMPT_SCENARIOS.md exists:**
+- Reads your custom project scenarios and requirements
+- Matches scenarios based on your defined trigger keywords
+- Adds your specific workflow requirements
+
+**If PROMPT_SCENARIOS.md doesn't exist:**
+- Uses built-in basic scenarios
+- Still provides common workflow reminders
+- Suggests creating PROMPT_SCENARIOS.md for customization
 
 ## Benefits
 
-- **Fast Generation**: Lightweight, no complex logic or file reading
-- **Clear Output**: Immediate, detailed prompt ready to copy and use
-- **Review Before Use**: You can modify the refined prompt before using it
-- **Focused Purpose**: Pure prompt refinement without execution complexity
+### Basic Mode (Step 1 only)
+- **Fast Generation**: Lightweight, proven prompt refinement
+- **Clear Output**: Immediate technical details ready to copy
+- **No Dependencies**: Works without any configuration files
+- **Focused Purpose**: Pure technical prompt enhancement
 
-This streamlined approach gives you detailed, actionable prompts that you can review, modify, and use when ready.
+### Enhanced Mode (Step 1 + Step 2)  
+- **Complete Workflow**: Technical details + project requirements
+- **Never Forget**: Automatic workflow reminders
+- **Project Aware**: Customizable scenarios via PROMPT_SCENARIOS.md
+- **Team Consistency**: Standardized workflow enforcement
+
+This progressive enhancement approach lets you choose the level of detail you need: basic technical refinement or complete project-aware enhancement.
