@@ -1,6 +1,6 @@
 # Project Prompt Scenarios
 
-简化的项目场景配置文件，用于 `/enhance-prompt` 命令自动添加工作流要求。
+简化的项目场景配置文件，用于 `/refine-prompt` 命令自动添加工作流要求。
 
 ## Feature Development - 新功能开发
 **Triggers**: implement, add, create, build, develop, new, feature, 实现, 添加, 创建, 构建, 开发, 新功能
