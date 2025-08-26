@@ -26,6 +26,7 @@ Based on document analysis, classify projects as:
 - **Microservice**: Service boundaries, inter-service communication, domain logic
 - **Library/Package**: Reusable components, public APIs, distribution
 - **ML/AI Application**: Model training, inference, data preprocessing
+- **LLM Agents**: Agent workflows, prompt management, tool integration, conversation handling
 - **Event-Driven System**: Message queues, event handlers, async processing
 - **Background Worker**: Task processing, job queues, scheduled operations
 
@@ -45,6 +46,9 @@ Create project-specific module organization based on analysis:
 
 - **AI/ML keywords** (model, training, inference, dataset)
   → `models/`, `training/`, `inference/`, `data/`, `preprocessing/`, `evaluation/`
+
+- **LLM Agents keywords** (agent, prompt, tool, conversation, workflow, llm, openai, anthropic)
+  → `agents/`, `prompts/`, `tools/`, `workflows/`, `memory/`, `integrations/`
 
 ## User's Established Preferences
 
