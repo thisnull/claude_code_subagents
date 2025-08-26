@@ -46,20 +46,24 @@ project-name/
 │   ├── Dockerfile              # Multi-stage container build
 │   └── docker-compose.yml      # Development environment
 ├── docs/                       # Documentation structure
-├── src/{project_name}/         # Source code (src layout)
-│   ├── core/                   # Business logic
-│   ├── models/                 # Data models
-│   ├── services/               # Service layer
-│   ├── api/                    # API endpoints
-│   ├── utils/                  # Utilities
-│   ├── logging.py              # Structured logging config (structlog/loguru)
-│   └── config.py               # Configuration
+├── src/                        # Source code (src layout - avoid import conflicts)
+│   └── {project_name}/         # Main package (adapt structure based on project type)
+│       ├── __init__.py
+│       ├── config.py           # Configuration management
+│       └── logging.py          # Structured logging config (structlog/loguru)
 ├── tests/                      # Test suite
 │   ├── unit/                   # Unit tests
 │   ├── integration/            # Integration tests
 │   └── conftest.py             # pytest config
 └── scripts/                    # Operational scripts
 ```
+
+**Note**: Source code organization within `src/{project_name}/` should adapt to project type:
+- **Web API**: api/, models/, services/, core/
+- **CLI Tool**: cli/, commands/, core/, utils/
+- **Library**: core/, utils/, exceptions/
+- **Data Pipeline**: pipeline/, processors/, transformers/, storage/
+- **Microservice**: handlers/, domain/, infrastructure/, interfaces/
 
 ### Step 2: Configuration Generation
 - **pyproject.toml**: uv-compatible with modern Python standards
@@ -68,13 +72,10 @@ project-name/
 - **Build system**: Modern Python packaging standards
 
 ### Step 3: Template Files Creation
-- **Core modules**: Exception handling, base classes
-- **Model templates**: Data model patterns
-- **Service templates**: Business logic patterns
-- **API templates**: Health check, base routing
+- **Core infrastructure**: config.py, logging.py, __init__.py files
+- **Project-specific modules**: Adapt to project type and requirements
 - **Test templates**: pytest unit and integration test examples
-- **Config templates**: Environment-based configuration
-- **Logging templates**: Structured logging setup (structlog/loguru)
+- **Development templates**: Based on detected or specified project type
 
 ### Step 4: Development Environment Setup
 - **uv initialization**: Project and virtual environment
@@ -115,13 +116,11 @@ project-name/
 - Quality: integrated code quality checks
 
 ### Code Organization Principles
-- config.py for centralized configuration management
-- logging.py for structured logging setup (structlog/loguru)
-- Core business logic in core/ directory
-- Data models and schemas in models/
-- Business services in services/ directory
-- API endpoints in api/ directory
-- Utility functions in utils/
+- **src/ layout**: Always use src/ to avoid import conflicts
+- **Project-adaptive structure**: Organize modules based on project type and domain
+- **Core infrastructure files**: config.py, logging.py in main package
+- **Clear separation**: Tests, docs, scripts, and source code in dedicated directories
+- **Flexibility**: Allow for project-specific module organization within src/
 
 ### Container Deployment
 - Docker configuration organized in docker/ directory

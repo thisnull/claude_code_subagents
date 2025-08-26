@@ -29,7 +29,7 @@ This command implements your specific habits and preferences:
 
 ### Directory Structure
 - **src/ layout**: Avoids top-level import conflicts
-- **Clear separation**: core/, models/, services/, api/, utils/
+- **Adaptive organization**: Module structure adapts to project type and domain
 - **Comprehensive testing**: unit/ and integration/ directories
 - **Documentation**: Integrated docs/ structure
 - **Operational scripts**: scripts/ for maintenance tasks
@@ -57,15 +57,10 @@ This command implements your specific habits and preferences:
 │   ├── api/                   # API documentation
 │   └── development.md         # Development guide
 ├── src/                       # Source code (avoids import conflicts)
-│   └── {project_name}/
+│   └── {project_name}/        # Main package (structure adapts to project type)
 │       ├── __init__.py
-│       ├── core/              # Core business logic
-│       ├── models/            # Data models & schemas
-│       ├── services/          # Business services layer
-│       ├── api/               # API endpoints
-│       ├── utils/             # Utility functions
-│       ├── logging.py         # Structured logging configuration (structlog/loguru)
-│       └── config.py          # Configuration management
+│       ├── config.py          # Configuration management
+│       └── logging.py         # Structured logging configuration (structlog/loguru)
 ├── tests/                     # Comprehensive test suite
 │   ├── conftest.py           # pytest configuration & fixtures
 │   ├── unit/                 # Unit tests
@@ -75,6 +70,15 @@ This command implements your specific habits and preferences:
     ├── deploy.sh             # Deployment script
     └── migrate.py            # Data migration template
 ```
+
+**Note**: The source code structure within `src/{project_name}/` adapts to your project type:
+- **Web APIs**: api/, models/, services/, core/
+- **CLI Tools**: cli/, commands/, core/, utils/  
+- **Libraries**: core/, utils/, exceptions/
+- **Data Pipelines**: pipeline/, processors/, transformers/
+- **Microservices**: handlers/, domain/, infrastructure/
+
+The initializer will detect or prompt for project type and create appropriate module structure.
 
 ## Usage Example
 
