@@ -1,21 +1,80 @@
 ---
 name: init-python-project
-description: Initialize a Python project following your preferred structure and best practices using uv package manager, clean directory structure, and development tools setup. Automatically invokes python-project-initializer subagent.
+description: Initialize a Python project following your preferred structure and best practices using uv package manager, clean directory structure, and development tools setup. Automatically invokes python-project-initializer subagent. Supports intelligent project analysis from requirement documents.
 allowed-tools: Task, Bash, Write, Read, Edit
+argument-hint: [file1] [file2] [file3] ... (optional requirement/design documents)
 ---
 
-Initialize a high-quality Python project following your established preferences by invoking the specialized `python-project-initializer` subagent.
+Initialize a high-quality Python project following your established preferences by invoking the specialized `python-project-initializer` subagent with intelligent document analysis capabilities.
+
+## Command Usage
+
+```bash
+# Basic initialization (interactive project type selection)
+/init-python-project
+
+# Intelligent initialization with document analysis
+/init-python-project requirements.md
+/init-python-project PRD.md design-doc.pdf architecture.txt
+/init-python-project README.md project-spec.docx api-design.yaml
+```
 
 ## Execution Flow
 
 ```
-When user executes /init-python-project:
+When user executes /init-python-project [documents...]:
 → Automatically invokes python-project-initializer subagent
-→ Subagent analyzes current directory and project context
+→ If documents provided: Analyzes documents to determine project type and architecture
+→ If no documents: Interactive prompts for project type and requirements
 → Creates complete directory structure following your preferences
-→ Generates all configuration files with proper tool integration
+→ Generates project-specific module organization based on analysis
 → Sets up development environment with uv package manager
 → Updates CLAUDE.md with Python project preferences for future reference
+```
+
+## Intelligent Document Analysis
+
+The command can analyze various document types to understand your project:
+
+### Supported Document Types
+- **Requirements Documents**: `.md`, `.txt`, `.docx`, `.pdf`
+- **Design Documents**: Architecture specs, system design, API documentation
+- **Project Plans**: Development roadmaps, feature specifications
+- **Existing Code**: Sample files, prototypes, legacy code references
+- **Configuration Files**: API schemas (`.yaml`, `.json`), database schemas
+
+### Analysis Capabilities
+- **Project Type Detection**: Web API, CLI tool, data pipeline, microservice, library, etc.
+- **Architecture Pattern Recognition**: REST API, GraphQL, event-driven, batch processing
+- **Technology Stack Inference**: Database requirements, external integrations, frameworks
+- **Module Structure Planning**: Domain boundaries, service layers, data models
+- **Integration Requirements**: Third-party APIs, message queues, storage systems
+
+### Example Analysis Results
+
+**Input**: `requirements.md` containing "user authentication, product catalog, shopping cart, payment processing"
+**Result**: E-commerce web API project with modules:
+```
+src/myproject/
+├── auth/          # User authentication & authorization
+├── catalog/       # Product catalog management
+├── cart/          # Shopping cart functionality
+├── payments/      # Payment processing
+├── orders/        # Order management
+├── api/           # REST API endpoints
+└── models/        # Shared data models
+```
+
+**Input**: `data-pipeline-spec.pdf` describing ETL workflows
+**Result**: Data pipeline project with modules:
+```
+src/myproject/
+├── extractors/    # Data extraction components
+├── transformers/  # Data transformation logic
+├── loaders/       # Data loading mechanisms
+├── pipeline/      # Workflow orchestration
+├── storage/       # Storage adapters
+└── monitoring/    # Pipeline monitoring
 ```
 
 ## Your Established Preferences
