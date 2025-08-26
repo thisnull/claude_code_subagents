@@ -1,6 +1,6 @@
 ---
 name: init-python-project
-description: Initialize a Python project following your preferred structure and best practices using uv package manager, clean directory structure, and development tools setup. Automatically invokes python-project-initializer subagent. Supports intelligent project analysis from requirement documents.
+description: Initialize a Python project following your preferred structure and best practices using uv package manager, clean directory structure, and development tools setup. Automatically invokes python-project-initializer subagent. Supports intelligent project analysis from requirement documents. CRITICAL: Records project organization principles in CLAUDE.md to ensure Claude Code remembers module placement rules and development patterns for future sessions.
 allowed-tools: Task, Bash, Write, Read, Edit
 argument-hint: [file1] [file2] [file3] ... (optional requirement/design documents)
 ---
@@ -194,11 +194,66 @@ docker build -f docker/Dockerfile .  # Build production image
 
 After running this command:
 
-1. **Preference Memory**: Your Python project preferences are stored in CLAUDE.md
-2. **Consistent Structure**: Future Python work follows your established patterns
-3. **Modern Tooling**: Latest Python development practices integrated
-4. **Quality Automation**: Code quality tools integrated in development workflow
-5. **Development Efficiency**: All tools configured and ready to use
+1. **Project Organization Memory**: Detailed directory and module organization principles are recorded in CLAUDE.md
+2. **Claude Code Guidance**: Future Claude Code sessions will remember where different types of functionality belong
+3. **Script Placement Rules**: Clear guidelines on where to place debugging, deployment, and operational scripts
+4. **Module Responsibility Matrix**: Specific mapping of what functionality goes in which module
+5. **README Synchronization**: Project README updated with structure overview and development guidelines
+6. **Consistent Future Development**: Claude Code will follow established patterns instead of guessing placement rules
+
+## Critical Documentation Features
+
+### CLAUDE.md Organization Principles
+The command records essential organization rules that Claude Code often forgets:
+- **Module Placement**: Where LLM agent functionality, API endpoints, CLI commands belong
+- **Script Organization**: scripts/debug/, scripts/deploy/, scripts/ops/ for different operational needs
+- **Test Structure**: Unit tests organized by application module, integration tests for cross-app functionality
+- **Shared Infrastructure**: When to use shared/core/, shared/models/, shared/config/
+- **Development Tool Usage**: ruff, black, mypy, pytest configuration and usage patterns
+
+### README.md Structure Documentation
+Project README is automatically updated to include:
+- **Architecture Overview**: Multi-application project structure explanation
+- **Development Workflow**: How to develop each application type
+- **Script Reference**: Usage guide for debugging, deployment, and operational scripts
+- **Module Navigation**: Quick reference for finding specific functionality
+
+**Key Value**: This ensures Claude Code will not randomly place functionality or forget your preferred organization patterns in future development sessions.
+
+## Organizational Memory System
+
+### The Problem This Solves
+Claude Code often forgets project-specific organization principles across sessions:
+- ❌ Places debugging scripts in random locations instead of `scripts/debug/`
+- ❌ Forgets which functionality belongs in which application module
+- ❌ Mixes application-specific code with shared infrastructure  
+- ❌ Doesn't follow established testing organization patterns
+- ❌ Uses inconsistent naming and directory structures
+
+### The Solution: Persistent Organization Principles
+After running `/init-python-project`, Claude Code will remember:
+
+**Module Placement Memory:**
+```markdown
+## Where functionality belongs (recorded in CLAUDE.md):
+- LLM Agent features → src/{project}/llm_agents/
+- Web API endpoints → src/{project}/web_api/
+- CLI commands → src/{project}/cli_app/  
+- Shared business logic → src/{project}/shared/core/
+- Debugging tools → scripts/debug/
+- Deployment automation → scripts/deploy/
+```
+
+**Development Pattern Memory:**
+- Testing organization: `tests/unit/{app_module}/` and `tests/integration/`
+- Configuration management: Centralized in `shared/config/`
+- Logging setup: structlog/loguru instead of bare logging module
+- Tool configuration: ruff, black, mypy, pytest integration
+
+### Documentation Synchronization
+- **CLAUDE.md**: Technical organization principles for Claude Code
+- **README.md**: Project structure overview and development guide for humans
+- **Consistent Reference**: Both files maintain synchronized information about project organization
 
 ## Generated Configuration Features
 
