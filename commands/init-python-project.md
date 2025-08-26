@@ -43,38 +43,69 @@ The command can analyze various document types to understand your project:
 - **Technical Specs**: Architecture docs, system design, database schemas (in markdown)
 
 ### Analysis Capabilities
-- **Project Type Detection**: Web API, CLI tool, data pipeline, microservice, library, etc.
-- **Architecture Pattern Recognition**: REST API, GraphQL, event-driven, batch processing
+- **Multi-Application Detection**: Identifies distinct application types within the same project
+- **Application-Centric Architecture**: Each application type becomes an independent module with its own internal structure
+- **Shared Infrastructure Planning**: Extracts common functionality to shared/ module
+- **Inter-Application Interface Design**: Plans communication between different applications
 - **Technology Stack Inference**: Database requirements, external integrations, frameworks
-- **Module Structure Planning**: Domain boundaries, service layers, data models
-- **Integration Requirements**: Third-party APIs, message queues, storage systems
 
 ### Example Analysis Results
 
-**Input**: `requirements.md` containing "user authentication, product catalog, shopping cart, payment processing"
-**Result**: E-commerce web API project with modules:
+**Single Application Project:**
+**Input**: `requirements.md` containing "REST API for user management with authentication endpoints"
+**Result**: Web API application project:
 ```
-src/myproject/
-├── auth/          # User authentication & authorization
-├── catalog/       # Product catalog management
-├── cart/          # Shopping cart functionality
-├── payments/      # Payment processing
-├── orders/        # Order management
-├── api/           # REST API endpoints
-└── models/        # Shared data models
+src/user_management/
+├── web_api/           # Single Web API application
+│   ├── api/
+│   │   └── v1/
+│   │       ├── auth.py      # Authentication endpoints
+│   │       └── users.py     # User management endpoints
+│   ├── schemas/       # Request/response models
+│   ├── services/      # Business logic
+│   └── dependencies/  # FastAPI dependencies
+├── shared/
+│   ├── core/
+│   ├── models/        # User data models
+│   └── config/
+└── __init__.py
 ```
 
-**Input**: `data-pipeline-spec.md` describing ETL workflows
-**Result**: Data pipeline project with modules:
+**Multi-Application Project:**
+**Input**: `project-spec.md` containing "LLM agent system with REST API endpoints and CLI interface for management"
+**Detected Applications**: LLM Agents + Web API + CLI Application
+**Result**: Multi-application architecture:
 ```
-src/myproject/
-├── extractors/    # Data extraction components
-├── transformers/  # Data transformation logic
-├── loaders/       # Data loading mechanisms
-├── pipeline/      # Workflow orchestration
-├── storage/       # Storage adapters
-└── monitoring/    # Pipeline monitoring
+src/intelligent_system/
+├── llm_agents/        # LLM应用 - 核心智能功能
+│   ├── agents/        # Agent实现
+│   ├── prompts/       # 提示管理
+│   ├── tools/         # 工具集成
+│   └── workflows/     # 工作流程
+├── web_api/           # API应用 - 对外接口
+│   ├── api/
+│   │   └── v1/
+│   │       ├── agents.py    # Agent管理API
+│   │       └── chat.py      # 对话API
+│   ├── schemas/       # API数据模型
+│   └── services/      # API业务逻辑
+├── cli_app/           # CLI应用 - 管理工具
+│   ├── commands/
+│   │   ├── agent.py   # Agent管理命令
+│   │   └── config.py  # 配置命令
+│   └── output/        # 输出格式化
+├── shared/            # 共享基础设施
+│   ├── core/          # 核心业务逻辑
+│   ├── models/        # 共享数据模型
+│   └── config/        # 统一配置管理
+└── __init__.py
 ```
+
+**Application Benefits:**
+- **Clear Boundaries**: Each application has distinct responsibilities and can be developed independently
+- **Scalable Architecture**: Applications can be deployed and scaled separately
+- **Team Collaboration**: Different teams can work on different applications simultaneously  
+- **Shared Infrastructure**: Common functionality is centralized and reusable across applications
 
 ## Your Established Preferences
 
@@ -108,12 +139,7 @@ This command implements your specific habits and preferences:
 ├── .gitignore                  # Python-specific git ignores
 ├── docker/                     # Container deployment configuration
 │   ├── Dockerfile              # Multi-stage container deployment
-│   └── docker-compose.yml      # Local development environment
-├── docs/                       # Project documentation
-│   ├── README.md              # Documentation overview
-│   ├── architecture.md        # System architecture
-│   ├── api/                   # API documentation
-│   └── development.md         # Development guide
+│   └── docker-compose.yml      # Local development environmen
 ├── src/                       # Source code (avoids import conflicts)
 │   └── {project_name}/        # Main package (structure adapts to project type)
 │       ├── __init__.py
@@ -129,14 +155,22 @@ This command implements your specific habits and preferences:
     └── migrate.py            # Data migration template
 ```
 
-**Note**: The source code structure within `src/{project_name}/` adapts to your project type:
-- **Web APIs**: api/, models/, services/, core/
-- **CLI Tools**: cli/, commands/, core/, utils/  
-- **Libraries**: core/, utils/, exceptions/
-- **Data Pipelines**: pipeline/, processors/, transformers/
-- **Microservices**: handlers/, domain/, infrastructure/
+**Note**: The source code structure within `src/{project_name}/` follows application-centric architecture:
 
-The initializer will detect or prompt for project type and create appropriate module structure.
+**Single Application Projects:**
+- **Web APIs**: `web_api/` with internal api/, schemas/, services/, dependencies/
+- **CLI Tools**: `cli_app/` with internal commands/, parsers/, output/, validators/  
+- **Libraries**: `library/` with internal core/, utils/, exceptions/
+- **Data Pipelines**: `data_pipeline/` with internal extractors/, transformers/, loaders/, orchestration/
+- **LLM Agents**: `llm_agents/` with internal agents/, prompts/, tools/, workflows/
+
+**Multi-Application Projects:**
+- Each detected application type gets its own top-level module
+- Applications follow their specific internal best practices
+- Shared infrastructure extracted to `shared/` module
+- Clear interfaces enable independent development and deployment
+
+The initializer will detect application types from document analysis and create appropriate multi-application structure with proper separation of concerns.
 
 ## Usage Example
 

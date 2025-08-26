@@ -17,8 +17,8 @@ When provided with project documents, you must:
 - **Architecture Inference**: Determine module boundaries, data flow, integration points
 - **Technology Stack Detection**: Identify databases, external APIs, frameworks, protocols
 
-### 2. Project Type Classification
-Based on document analysis, classify projects as:
+### 2. Application-Level Architecture Detection
+Based on document analysis, identify distinct application types that need to be built (projects can contain multiple independent applications):
 
 - **Web API/REST Service**: API endpoints, HTTP methods, request/response schemas
 - **CLI Application**: Command-line interface, subcommands, argument parsing
@@ -30,25 +30,162 @@ Based on document analysis, classify projects as:
 - **Event-Driven System**: Message queues, event handlers, async processing
 - **Background Worker**: Task processing, job queues, scheduled operations
 
-### 3. Intelligent Module Structure Generation
-Create project-specific module organization based on analysis:
+### 3. Application-Centric Module Structure Generation
+Create project structure by treating each detected application type as an independent module with its own internal organization:
 
-**Example Analysis Results:**
+**Architecture Design Principles:**
+- **Application Isolation**: Each application type gets its own top-level module under src/
+- **Internal Best Practices**: Each application follows its type-specific internal structure
+- **Shared Infrastructure**: Common functionality extracted to shared/ module
+- **Clear Interfaces**: Applications communicate through well-defined interfaces
+- **Independent Deployment**: Each application can be developed, tested, and deployed independently
 
-- **E-commerce keywords** (authentication, catalog, cart, payments, orders)
-  → `auth/`, `catalog/`, `cart/`, `payments/`, `orders/`, `api/`, `models/`
+**Application Module Naming:**
+- Convert application types to module names (e.g., "Web API" → `web_api/`, "CLI Application" → `cli_app/`)
+- Use Python-friendly naming (lowercase with underscores)
+- Keep names descriptive and consistent
 
-- **Data processing keywords** (ETL, pipeline, transform, load, batch)
-  → `extractors/`, `transformers/`, `loaders/`, `pipeline/`, `storage/`, `monitoring/`
+**Multi-Application Project Structure:**
+```
+src/project_name/
+├── {app_type_1}/          # First detected application (e.g., llm_agents/)
+│   └── [internal structure following app-specific patterns]
+├── {app_type_2}/          # Second detected application (e.g., web_api/)
+│   └── [internal structure following app-specific patterns]  
+├── {app_type_3}/          # Third detected application (e.g., cli_app/)
+│   └── [internal structure following app-specific patterns]
+├── shared/                # Shared infrastructure and utilities
+│   ├── core/              # Core business logic
+│   ├── models/            # Shared data models
+│   ├── config/            # Configuration management
+│   └── utils/             # Common utilities
+└── __init__.py
+```
 
-- **CLI keywords** (commands, subcommands, arguments, terminal)
-  → `cli/`, `commands/`, `parsers/`, `output/`, `core/`
+**Application-Specific Internal Structures:**
 
-- **AI/ML keywords** (model, training, inference, dataset)
-  → `models/`, `training/`, `inference/`, `data/`, `preprocessing/`, `evaluation/`
+**LLM Agents Application Internal Structure:**
+```
+llm_agents/
+├── __init__.py
+├── agents/              # Agent implementations
+├── prompts/             # Prompt templates and management
+├── tools/               # Tool integrations
+├── workflows/           # Agent workflows
+├── memory/              # Conversation and context memory
+└── integrations/        # External LLM provider integrations
+```
 
-- **LLM Agents keywords** (agent, prompt, tool, conversation, workflow, llm, openai, anthropic)
-  → `agents/`, `prompts/`, `tools/`, `workflows/`, `memory/`, `integrations/`
+**Web API Application Internal Structure:**
+```
+web_api/
+├── __init__.py
+├── api/                 # API route definitions
+│   ├── v1/              # API version organization
+│   └── middleware/      # API middleware
+├── schemas/             # Pydantic schemas for request/response
+├── services/            # Business logic services
+├── dependencies/        # FastAPI dependencies
+└── exceptions/          # API-specific exceptions
+```
+
+**CLI Application Internal Structure:**
+```
+cli_app/
+├── __init__.py
+├── commands/            # Command implementations
+├── parsers/             # Argument parsing logic
+├── output/              # Output formatting and display
+├── plugins/             # Extensible command plugins
+└── validators/          # Input validation logic
+```
+
+**Data Pipeline Application Internal Structure:**
+```
+data_pipeline/
+├── __init__.py
+├── extractors/          # Data extraction components
+├── transformers/        # Data transformation logic
+├── loaders/             # Data loading mechanisms
+├── orchestration/       # Pipeline workflow management
+├── monitors/            # Pipeline monitoring and alerting
+└── storage/             # Storage adapters and connectors
+```
+
+**Example 1: LLM Agent System with API and CLI**
+
+**Input Analysis**: "Build an LLM agent system that provides REST API endpoints and CLI interface"
+- **Detected Applications**: LLM Agents + Web API + CLI Application
+- **Generated Project Structure**:
+
+```
+src/intelligent_agent_system/
+├── llm_agents/                    # LLM核心应用
+│   ├── __init__.py
+│   ├── agents/                    # Agent实现
+│   ├── prompts/                   # 提示模板管理
+│   ├── tools/                     # 工具集成
+│   ├── workflows/                 # Agent工作流
+│   └── memory/                    # 对话记忆管理
+├── web_api/                       # Web API应用
+│   ├── __init__.py
+│   ├── api/
+│   │   ├── v1/
+│   │   │   ├── agents.py          # Agent相关API端点
+│   │   │   └── conversations.py   # 对话API端点
+│   │   └── middleware/
+│   ├── schemas/                   # API请求响应模型
+│   └── services/                  # API业务逻辑
+├── cli_app/                       # CLI应用
+│   ├── __init__.py
+│   ├── commands/
+│   │   ├── agent.py               # Agent管理命令
+│   │   └── chat.py                # 对话命令
+│   ├── output/                    # CLI输出格式化
+│   └── parsers/                   # 命令行参数解析
+├── shared/                        # 共享基础设施
+│   ├── core/                      # 核心业务逻辑
+│   ├── models/                    # 共享数据模型
+│   ├── config/                    # 配置管理
+│   └── utils/                     # 公共工具
+└── __init__.py
+```
+
+**Example 2: Data Processing Platform with API**
+
+**Input Analysis**: "ETL data pipeline with REST API for monitoring and CLI for operations"
+- **Detected Applications**: Data Pipeline + Web API + CLI Application
+- **Generated Project Structure**:
+
+```
+src/data_platform/
+├── data_pipeline/                 # 数据管道应用
+│   ├── __init__.py
+│   ├── extractors/                # 数据提取
+│   ├── transformers/              # 数据转换
+│   ├── loaders/                   # 数据加载
+│   ├── orchestration/             # 流程编排
+│   └── monitors/                  # 管道监控
+├── web_api/                       # 监控API应用
+│   ├── __init__.py
+│   ├── api/
+│   │   └── v1/
+│   │       ├── pipelines.py       # 管道状态API
+│   │       └── metrics.py         # 监控指标API
+│   └── schemas/                   # API数据模型
+├── cli_app/                       # 运维CLI应用
+│   ├── __init__.py
+│   ├── commands/
+│   │   ├── pipeline.py            # 管道操作命令
+│   │   └── deploy.py              # 部署命令
+│   └── output/                    # CLI输出
+├── shared/
+│   ├── core/
+│   ├── models/                    # 管道和数据模型
+│   ├── config/
+│   └── utils/
+└── __init__.py
+```
 
 ## User's Established Preferences
 
