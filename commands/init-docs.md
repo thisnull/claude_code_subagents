@@ -1,28 +1,62 @@
-# /init-docs Slash Command
+---
+name: init-docs
+description: Initialize complete documentation structure for projects by invoking the docs-manager subagent to create standardized directory hierarchy and establish documentation management mechanisms.
+---
 
-## 功能描述
-通过调用 `docs-manager` subagent 在任意项目中自动创建完整的文档目录结构，并建立文档管理和一致性保障机制。
+Automatically create a comprehensive documentation structure for any project by invoking the `docs-manager` subagent.
 
-## 命令格式
+## Command Format
 ```
 /init-docs
 ```
 
-## 执行流程
+## Execution Flow
 ```
-当用户执行 /init-docs 命令时：
-→ 自动触发 docs-manager subagent
-→ subagent 直接创建完整的文档目录结构
-→ 在每个目录中生成相应的README.md
-→ 更新项目的CLAUDE.md添加文档管理约束
+When user executes /init-docs command:
+→ Automatically triggers docs-manager subagent
+→ Subagent creates complete documentation directory structure
+→ Generates corresponding README.md files in each directory
+→ Updates project CLAUDE.md with documentation management constraints
 ```
 
-## 预期输出
-- 完整的docs/目录结构（通过Claude Code Write工具创建）
-- 每个目录的README.md索引文件
-- 更新的CLAUDE.md（包含文档管理约束和提醒机制）
+## Expected Output
+- Complete docs/ directory structure (created via Claude Code Write tool)
+- README.md index files for each directory
+- Updated CLAUDE.md (including documentation management constraints and reminder mechanisms)
+- Established documentation consistency and sync mechanisms
+- Quality standards and maintenance guidelines
 
-## 使用示例
+## Documentation Architecture Created
+The command creates a standardized documentation structure including:
+- Meta-documents and management (00-meta/)
+- Product and requirement documents (10-product/)
+- Architecture and design documents (20-architecture/)
+- Integration architecture (25-integration/)
+- Engineering and development practices (30-engineering/)
+- Testing and quality assurance (40-quality/)
+- CI/CD and delivery (50-delivery/)
+- Operations and SRE (60-operations/)
+- Data and analytics (70-data-analytics/)
+- Project management (80-project/)
+- User-facing documentation (90-user-docs/)
+- Legal and compliance (95-legal/)
+- Research documents (96-research/)
+- Deployment documentation (97-deployment/)
+- Archived documents (98-archive/)
+- Development logs (99-development-log/)
+
+## Usage Examples
 ```bash
-/init-docs     # 在当前项目创建标准文档体系
+/init-docs     # Create standard documentation system in current project
 ```
+
+## Integration Features
+After initialization, Claude Code will:
+- Automatically remind about documentation updates when code/API/architecture changes
+- Enforce documentation-driven development practices
+- Maintain cross-document consistency checks
+- Ensure version synchronization across all documentation
+- Maintain terminology alignment standards
+- Monitor completeness, accuracy, and maintainability quality standards
+
+This command establishes a professional documentation foundation that enhances project maintainability and team collaboration.
