@@ -1,50 +1,50 @@
 ---
 name: refine-prompt
-description: Simple and fast prompt refinement tool that transforms brief user inputs into detailed, actionable instructions. Optionally adds project-specific workflow requirements from PROMPT_SCENARIOS.md when --with-scenarios flag is used. Automatically saves results to refined-prompt/ directory.
+description: Simple and fast prompt refinement tool that transforms brief user inputs into detailed, actionable instructions with automatic project-specific workflow requirements. Automatically saves results to refined-prompt/ directory.
 allowed-tools: Read, Write, Bash
-argument-hint: "<brief_prompt>" [--with-scenarios] (add --with-scenarios to include project workflow requirements)
+argument-hint: "<brief_prompt>" (the prompt you want to refine and enhance)
 ---
 
-Transform your brief prompts into clear, detailed instructions and optionally add project workflow requirements. **Results are automatically saved to `refined-prompt/` directory for future reference.**
+Transform your brief prompts into comprehensive, project-aware instructions with automatic workflow requirements. **Results are automatically saved to `refined-prompt/` directory for future reference.**
 
 **IMPORTANT: This command generates and displays refined prompts for you to copy and use - it does NOT execute the prompts.**
 
 ## Command Usage
 
 ```bash
-# Basic prompt refinement (Step 1 only)
+# Comprehensive prompt refinement with workflow requirements
 /refine-prompt "Add user authentication"
-# → Returns detailed technical requirements only
-# → Saves to refined-prompt/YYYY-MM-DD_HHMMSS_basic.md
-
-# Enhanced with project scenarios (Step 1 + Step 2)
-/refine-prompt "Add user authentication" --with-scenarios
 # → Returns technical requirements + project workflow reminders
-# → Saves to refined-prompt/YYYY-MM-DD_HHMMSS_enhanced.md
+# → Saves to refined-prompt/YYYY-MM-DD_HHMMSS.md
 
-# Bug fixing with workflows
-/refine-prompt "Fix login issue" --with-scenarios
+# Bug fixing with complete workflow
+/refine-prompt "Fix login issue"
 # → Returns debugging steps + testing and documentation requirements
-# → Saves to refined-prompt/YYYY-MM-DD_HHMMSS_enhanced.md
+# → Saves to refined-prompt/YYYY-MM-DD_HHMMSS.md
+
+# Feature development with full context
+/refine-prompt "Build shopping cart"
+# → Returns implementation details + development workflow requirements
+# → Saves to refined-prompt/YYYY-MM-DD_HHMMSS.md
 ```
 
-## Two-Step Enhancement Process
+## Comprehensive Enhancement Process
 
-### Step 1: Prompt Refinement (Always)
+### Step 1: Technical Refinement
 - **Analyze** your brief input for intent and scope
 - **Expand** with specific technical details and actionable steps  
 - **Clarify** requirements, constraints, and expected outcomes
 - **Format** as detailed, actionable instructions
 
-### Step 2: Scenario Enhancement (Optional with --with-scenarios)
+### Step 2: Workflow Integration
 - **Read** PROMPT_SCENARIOS.md for project-specific workflows
 - **Detect** matching scenarios based on keywords in refined prompt
 - **Append** relevant workflow requirements as additional sections
 - **Integrate** seamlessly with technical requirements
 
-### Step 3: File Output (Always)
+### Step 3: File Output
 - **Create Directory**: Ensure `refined-prompt/` directory exists in project root
-- **Generate Filename**: Create timestamped filename with type indicator
+- **Generate Filename**: Create timestamped filename
 - **Save Content**: Write both original and refined prompts to markdown file
 - **Display Location**: Show user where the file was saved
 
@@ -53,16 +53,15 @@ Transform your brief prompts into clear, detailed instructions and optionally ad
 Every refined prompt is automatically saved to `refined-prompt/` directory with the following format:
 
 ### File Naming Convention
-- **Basic Mode**: `YYYY-MM-DD_HHMMSS_basic.md`
-- **Enhanced Mode**: `YYYY-MM-DD_HHMMSS_enhanced.md`
-- **Example**: `2024-01-15_143027_enhanced.md`
+- **Format**: `YYYY-MM-DD_HHMMSS.md`
+- **Example**: `2024-01-15_143027.md`
 
 ### File Structure
 ```markdown
 # Prompt Refinement Session
 
 **Generated**: 2024-01-15 14:30:27
-**Mode**: Enhanced (with scenarios)
+**Mode**: Enhanced (with workflow requirements)
 **Original Length**: 25 characters
 **Refined Length**: 1,247 characters
 
@@ -83,31 +82,15 @@ Add user authentication
 - Organizes all refinement history in one location
 - Easy to browse, search, and reuse previous refinements
 
-## Console Output Formats
+## Output Format
 
-### Basic Output (without --with-scenarios)
-```markdown
-# 🔄 Refined Prompt (Ready to Copy)
+The command produces comprehensive, project-aware prompts:
 
-[Detailed technical requirements and implementation steps]
-
----
-## 📋 How to Use  
-1. Review the refined prompt above
-2. Copy it if it meets your needs
-3. Paste it into a new Claude Code session
-4. Modify as needed for your specific requirements
-
-## 📁 Saved to File
-✅ Prompt saved to: refined-prompt/2024-01-15_143027_basic.md
-```
-
-### Enhanced Output (with --with-scenarios)
 ```markdown
 # 🚀 Enhanced Prompt (Ready to Copy)
 
 ## 📋 Technical Requirements
-[Detailed technical requirements and implementation steps from Step 1]
+[Detailed technical requirements and implementation steps]
 
 ## ⚠️ Project Workflow Requirements
 Based on detected scenarios: [Scenario Names]
@@ -128,10 +111,10 @@ Based on detected scenarios: [Scenario Names]
 4. Modify any parts that don't fit your needs
 
 ## 📁 Saved to File
-✅ Enhanced prompt saved to: refined-prompt/2024-01-15_143027_enhanced.md
+✅ Enhanced prompt saved to: refined-prompt/2024-01-15_143027.md
 ```
 
-## Scenario Detection (when --with-scenarios is used)
+## Scenario Detection
 
 The system automatically detects relevant scenarios by matching keywords:
 
@@ -143,8 +126,6 @@ The system automatically detects relevant scenarios by matching keywords:
 - **Testing**: test, testing, unit, integration, e2e
 
 ## PROMPT_SCENARIOS.md Integration
-
-When using `--with-scenarios`:
 
 **If PROMPT_SCENARIOS.md exists:**
 - Reads your custom project scenarios and requirements
@@ -158,22 +139,13 @@ When using `--with-scenarios`:
 
 ## Benefits
 
-### Basic Mode (Step 1 only)
 - **Fast Generation**: Lightweight, proven prompt refinement
-- **Clear Output**: Immediate technical details ready to copy
-- **No Dependencies**: Works without any configuration files
-- **Focused Purpose**: Pure technical prompt enhancement
-- **History Tracking**: All refinements saved to refined-prompt/ directory
-
-### Enhanced Mode (Step 1 + Step 2)  
-- **Complete Workflow**: Technical details + project requirements
-- **Never Forget**: Automatic workflow reminders
+- **Complete Workflow**: Technical details + project requirements integrated
+- **Never Forget**: Automatic workflow reminders for every refinement
 - **Project Aware**: Customizable scenarios via PROMPT_SCENARIOS.md
 - **Team Consistency**: Standardized workflow enforcement
-- **Full Archive**: Complete refinement history with scenarios included
-
-### File Management Benefits
-- **Organized History**: All refinements in one directory
+- **History Tracking**: All refinements saved to refined-prompt/ directory
+- **Organized Archive**: Complete refinement history in one location
 - **Easy Reference**: Timestamped files for easy browsing
 - **Reusable Content**: Copy from previous refinements
 - **Version Control Friendly**: Markdown files work well with git
@@ -184,13 +156,13 @@ When using `--with-scenarios`:
 ### Directory Creation Process
 1. Check if `refined-prompt/` directory exists in project root
 2. Create directory if it doesn't exist using `mkdir -p refined-prompt`
-3. Generate timestamp-based filename with mode indicator
+3. Generate timestamp-based filename
 4. Write content to file using Write tool
 
 ### File Content Format
 - **Header**: Metadata about the refinement session
 - **Original Prompt**: User's input for reference
-- **Refined Prompt**: Full enhanced output
+- **Refined Prompt**: Full enhanced output with workflow requirements
 - **Footer**: Generation timestamp and tool attribution
 
-This progressive enhancement approach lets you choose the level of detail you need: basic technical refinement or complete project-aware enhancement, with automatic archiving for future reference.
+This comprehensive enhancement approach provides both detailed technical requirements and project-aware workflow reminders, with automatic archiving for future reference.
