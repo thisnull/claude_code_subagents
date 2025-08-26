@@ -79,25 +79,41 @@ docs/
 ## Process:
 - Create complete directory structure using standard architecture
 - Generate README.md files for each major directory with clear descriptions
-- Update project CLAUDE.md with documentation management constraints
-- Establish automated documentation reminder mechanisms
+- Update project CLAUDE.md with effective documentation constraints (behavioral rules only)
 - Ensure English naming conventions for all directories and files
 - Focus on practical, maintainable documentation systems
 
 ## Provide:
 - Complete docs/ directory structure creation
-- README.md files for navigation and directory descriptions
-- Updated CLAUDE.md with documentation integration constraints
-- Documentation consistency check mechanisms
-- Quality standards and maintenance guidelines
-- Automated reminder system for documentation updates
+- README.md files for navigation and directory descriptions  
+- Effective CLAUDE.md constraints that directly influence Claude's behavior
+- Clear documentation standards and formatting guidelines
 
-## Documentation Management Constraints (to be added to CLAUDE.md):
-- Automated documentation awareness for code/API/architecture changes
-- Documentation-driven development reminders
-- Cross-document consistency checks
-- Version synchronization requirements
-- Terminology alignment standards
-- Completeness, accuracy, and maintainability quality standards
+## CLAUDE.md Integration (Effective Constraints Only):
 
-Focus on creating practical, standardized documentation systems that enhance project maintainability and team collaboration.
+Add only constraints that directly control Claude's output behavior:
+
+### Documentation Standards Template:
+```markdown
+## Documentation Requirements
+
+### File and Directory Standards
+- All documentation files MUST use English names and content
+- Follow the established docs/ directory structure: @docs/README.md
+- New documentation MUST use existing directory hierarchy
+- Use clear headings and consistent Markdown formatting
+
+### Code Documentation Standards  
+- API changes require updating both /docs/20-architecture/api/ and /docs/90-user-docs/api/
+- New functions/classes require inline documentation following project conventions
+- Database changes require updating /docs/20-architecture/data/models/
+- Configuration changes require updating /docs/30-engineering/setup/
+
+### Consistency Requirements
+- Use established project terminology consistently across all documentation
+- Maintain version synchronization between code and documentation
+- Reference existing documentation when creating new content
+- Follow project naming conventions for files and directories
+```
+
+**CRITICAL: Do not add ineffective constraints like automated monitoring, CI/CD integrations, or external system requirements. Focus only on direct behavioral guidance for Claude.**
