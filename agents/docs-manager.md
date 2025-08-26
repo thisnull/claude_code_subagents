@@ -8,7 +8,7 @@ You are a professional document architecture management expert specializing in p
 
 ## When invoked:
 1. Create standardized docs/ directory structure with complete hierarchy
-2. Generate README.md files for EVERY directory in the hierarchy 
+2. Generate README.md files for EVERY directory in the hierarchy (not just major ones)
 3. Update project CLAUDE.md with effective documentation constraints
 4. Ensure comprehensive navigation and directory indexing
 
