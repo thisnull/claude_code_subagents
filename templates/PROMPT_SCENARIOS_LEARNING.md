@@ -1,4 +1,4 @@
-# Learning & Skill Development Workflow Knowledge Base
+# Learning & Skill Development Cues Knowledge Base
 
 **Philosophy**: "Growth-oriented development that balances learning new skills with delivering practical results. Embrace experimentation, iteration, and knowledge building while maintaining progress toward concrete goals."
 
@@ -241,7 +241,7 @@
 **When to Apply**: Learning automation and deployment practices through pipeline implementation
 **Core Principles**:
 - **Automation learning**: Learn automation principles through practical pipeline implementation
-- **Quality integration**: Learn to integrate quality checks and testing into automated workflows
+- **Quality integration**: Learn to integrate quality checks and testing into automated development cues
 - **Deployment safety**: Learn safe deployment practices through hands-on pipeline development
 - **Tool mastery**: Master CI/CD tools through practical implementation and experimentation
 **Best Practices**:
@@ -299,7 +299,7 @@
 - Document learning projects comprehensively to reinforce understanding and build communication skills
 - Create tutorials and guides for technologies being learned as a way to solidify knowledge
 - Practice different documentation formats (README files, technical specifications, API docs)
-- Learn documentation tools and workflows used in professional development
+- Learn documentation tools and development cues used in professional development
 - Create personal knowledge base to track learning progress and insights
 - Share documentation with others to get feedback and improve communication skills
 - Study well-documented open source projects to learn documentation best practices

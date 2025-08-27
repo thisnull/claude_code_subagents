@@ -1,11 +1,11 @@
-# Consulting & Client Project Workflow Knowledge Base
+# Consulting & Client Project Development Cues Knowledge Base
 
 **Philosophy**: "Client value maximization through professional delivery, clear communication, and sustainable partnerships. Balance client needs with technical excellence and long-term relationship building."
 
 **AI Usage Instructions**: 
 - Prioritize client value and satisfaction in all recommendations
 - Suggest approaches that facilitate clear client communication and expectation management
-- Focus on deliverable-oriented workflows with milestone-based progress tracking
+- Focus on deliverable-oriented development cues with milestone-based progress tracking
 - Recommend documentation and processes that support client transparency
 - Emphasize sustainable consulting practices that enable long-term client relationships
 
@@ -73,7 +73,7 @@
 - **Quality assurance**: Maintain testing standards that protect client relationships and reputation
 **Best Practices**:
 - Develop test plans that directly validate client acceptance criteria and business requirements
-- Include user acceptance testing with actual client users and workflows
+- Include user acceptance testing with actual client users and development cues
 - Test in environments that closely mirror client production systems
 - Implement comprehensive regression testing to prevent issues in client environments
 - Document testing procedures and results for client transparency and audit requirements
@@ -90,7 +90,7 @@
 **Core Principles**:
 - **Business alignment**: Architecture must directly support client business objectives
 - **Scalability planning**: Design for client's current and projected growth requirements
-- **Integration readiness**: Plan for integration with client's existing systems and workflows
+- **Integration readiness**: Plan for integration with client's existing systems and development cues
 - **Long-term viability**: Create architecture that serves client needs beyond project completion
 **Best Practices**:
 - Conduct thorough analysis of client's existing technical infrastructure and constraints
@@ -108,7 +108,7 @@
 - **Client integration focus**: APIs must seamlessly integrate with client's existing systems
 - **Clear documentation**: Comprehensive API documentation that enables client team adoption
 - **Backward compatibility**: Maintain compatibility to protect client integrations
-- **Business process alignment**: Design APIs that match client's business workflows
+- **Business process alignment**: Design APIs that match client's business development cues
 **Best Practices**:
 - Design APIs based on client's specific integration requirements and technical constraints
 - Create comprehensive API documentation with examples relevant to client use cases
@@ -225,7 +225,7 @@
 - **Stakeholder collaboration**: Involve client stakeholders in design process and validation
 **Best Practices**:
 - Conduct user research with client's actual users and stakeholders
-- Design experiences that align with client's business objectives and user workflows
+- Design experiences that align with client's business objectives and user development cues
 - Create design systems that integrate with client's existing brand and style guidelines
 - Include client stakeholders in iterative design and validation processes
 - Provide design documentation and assets suitable for client team handover

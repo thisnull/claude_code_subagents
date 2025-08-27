@@ -1,11 +1,11 @@
-# Project Workflow Knowledge Base
+# Project Development Cues Knowledge Base
 
-**Purpose**: Provide comprehensive workflow knowledge for AI-powered prompt optimization. This knowledge base enables intelligent scenario detection and dynamic workflow requirement generation based on semantic understanding rather than keyword matching.
+**Purpose**: Provide comprehensive development cues knowledge for AI-powered prompt optimization. This knowledge base enables intelligent scenario detection and dynamic development cue generation based on semantic understanding rather than keyword matching.
 
 **AI Usage Instructions**: 
 - Analyze the user's prompt to understand true intent and context
 - Intelligently identify relevant scenarios and their relationships
-- Dynamically generate customized workflow requirements
+- Dynamically generate customized development cues and requirements
 - Combine and prioritize multiple scenarios when appropriate
 - Avoid mechanical matching and redundant suggestions
 
@@ -278,7 +278,7 @@
 # 🛠️ DEVOPS & OPERATIONS
 
 ## CI/CD Pipeline
-**When to Apply**: Automation setup, deployment pipeline development, workflow optimization
+**When to Apply**: Automation setup, deployment pipeline development, process optimization
 **Core Principles**:
 - Automation and repeatability
 - Quality gates and validation
@@ -344,14 +344,14 @@
 ### For Automated Refinement (`/refine-prompt`)
 1. **Semantic Analysis**: Understand the true intent behind the user's prompt
 2. **Intelligent Matching**: Identify 1-3 most relevant scenarios based on context
-3. **Dynamic Generation**: Create customized workflow requirements, not template filling
+3. **Dynamic Generation**: Create customized development cues requirements, not template filling
 4. **Smart Combination**: When multiple scenarios apply, intelligently merge requirements
 5. **Contextual Filtering**: Exclude irrelevant suggestions based on prompt context
 
 ### For Interactive Workshop (`/prompt-workshop`)
 1. **Scenario Discussion**: Present identified scenarios and ask for confirmation
-2. **Requirement Customization**: Adapt workflow requirements to specific project needs
-3. **Priority Guidance**: Help users prioritize workflow requirements based on their context
+2. **Requirement Customization**: Adapt development cues requirements to specific project needs
+3. **Priority Guidance**: Help users prioritize development cues requirements based on their context
 4. **Best Practice Recommendations**: Suggest additional considerations based on scenario combinations
 
 ### Example AI Decision Process

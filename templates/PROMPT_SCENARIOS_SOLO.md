@@ -1,11 +1,11 @@
-# Solo Development Workflow Knowledge Base
+# Solo Development Cues Knowledge Base
 
 **Philosophy**: "Efficient personal development with balanced quality. Optimize for individual productivity while maintaining code that future-you can understand and maintain."
 
 **AI Usage Instructions**: 
 - Prioritize solutions that balance speed with long-term maintainability
 - Suggest self-documenting approaches that don't require extensive external documentation
-- Focus on sustainable personal workflows that prevent burnout
+- Focus on sustainable personal development cues that prevent burnout
 - Recommend tooling and practices suitable for one-person teams
 - Emphasize knowledge retention and personal skill development
 
@@ -69,7 +69,7 @@
 - **Personal testing style**: Develop testing approaches that fit your working style
 **Best Practices**:
 - Focus on testing business logic and complex algorithms rather than simple getters/setters
-- Write integration tests for critical user workflows you can't afford to break
+- Write integration tests for critical user development cues you can't afford to break
 - Use Test-Driven Development selectively for complex problems that benefit from design clarity
 - Maintain a balance between test coverage and development velocity
 - Automate tests for repetitive scenarios you test manually
@@ -179,7 +179,7 @@
 - Implement basic security hygiene: HTTPS, input validation, secure session management
 - Keep dependencies updated and use tools to identify vulnerable packages
 - Follow OWASP guidelines for your application type and technology stack
-- Use security scanning tools that integrate with your development workflow
+- Use security scanning tools that integrate with your development cues
 - Store sensitive configuration securely and never commit secrets to version control
 **Common Combinations**: Often combined with Code Review, Compliance
 
@@ -227,7 +227,7 @@
 - **Testing with real users**: Get feedback from users with different accessibility needs
 **Best Practices**:
 - Learn and apply basic accessibility principles: semantic HTML, keyboard navigation, alt text
-- Use accessibility testing tools that integrate with your development workflow
+- Use accessibility testing tools that integrate with your development cues
 - Test your application with keyboard-only navigation and screen readers
 - Choose color schemes and fonts that work for users with visual impairments
 - Implement accessible forms with proper labels and error handling
@@ -298,7 +298,7 @@
 - Document non-obvious design decisions and architectural choices inline with code
 - Keep API documentation current if you're building APIs
 - Document deployment and maintenance procedures step-by-step
-- Use simple documentation tools that integrate with your development workflow
+- Use simple documentation tools that integrate with your development cues
 - Review and update documentation regularly to ensure it remains accurate and helpful
 **Common Combinations**: Often combined with Feature Development, Architecture Design
 

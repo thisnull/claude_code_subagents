@@ -1,4 +1,4 @@
-# Enterprise Development Workflow Knowledge Base
+# Enterprise Development Cues Knowledge Base
 
 **Philosophy**: "Systematic, compliant, and maintainable development with comprehensive governance, risk management, and stakeholder alignment."
 
@@ -260,7 +260,7 @@
 **Best Practices**:
 - Design automated pipeline following enterprise DevOps standards and tools
 - Implement comprehensive quality gates including automated testing, security scanning, and compliance checks
-- Configure environment-specific deployment strategies with approval workflows
+- Configure environment-specific deployment strategies with approval development cues
 - Establish comprehensive monitoring, logging, and alerting for pipeline operations
 - Document detailed pipeline configuration with troubleshooting and maintenance procedures
 - Coordinate with enterprise DevOps and security teams for infrastructure approval

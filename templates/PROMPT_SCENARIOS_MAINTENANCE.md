@@ -1,4 +1,4 @@
-# Maintenance Mode Development Workflow Knowledge Base
+# Maintenance Mode Development Cues Knowledge Base
 
 **Philosophy**: "Stability first, risk minimization, and careful evolution. Preserve existing functionality while making gradual improvements that enhance rather than disrupt the current system."
 
@@ -19,14 +19,14 @@
 - **Compatibility first**: All new features must maintain backward compatibility
 - **Risk assessment**: Evaluate impact on existing functionality before implementation
 - **Incremental addition**: Add features gradually to minimize disruption
-- **User impact consideration**: Prioritize features that enhance rather than change existing workflows
+- **User impact consideration**: Prioritize features that enhance rather than change existing development cues
 **Best Practices**:
 - Conduct thorough impact analysis before implementing any new features
 - Use feature flags to enable gradual rollout and quick rollback if needed
 - Implement new features as additive changes rather than modifications to existing code
 - Ensure comprehensive testing of both new functionality and existing features
 - Document all changes with clear rationale and potential impact assessment
-- Plan migration paths for any changes that affect existing user workflows
+- Plan migration paths for any changes that affect existing user development cues
 **Common Combinations**: Always combined with Testing, Code Review, Risk Assessment
 
 ## Bug Fixing
@@ -206,7 +206,7 @@
 - Monitor security logs and alerts continuously for signs of compromise
 - Update security configurations and access controls based on principle of least privilege
 - Document security procedures and ensure they're followed consistently
-- Plan security improvements that enhance rather than disrupt existing workflows
+- Plan security improvements that enhance rather than disrupt existing development cues
 - Maintain security compliance through regular audits and assessments
 **Common Combinations**: Always combined with Compliance, Monitoring, Risk Assessment
 

@@ -1,4 +1,4 @@
-# Research & Academic Development Workflow Knowledge Base
+# Research & Academic Development Cues Knowledge Base
 
 **Philosophy**: "Scientific rigor, reproducibility, and open knowledge sharing. Prioritize methodological soundness, peer review readiness, and contributions to the broader scientific community."
 
@@ -35,7 +35,7 @@
 **Core Principles**:
 - **Scientific accuracy**: Bugs in research code can invalidate scientific conclusions
 - **Methodological transparency**: Document all bug fixes and their impact on results
-- **Reproducibility maintenance**: Ensure fixes don't break existing reproducible workflows
+- **Reproducibility maintenance**: Ensure fixes don't break existing reproducible development cues
 - **Peer review readiness**: Fix bugs with the same rigor as initial implementation
 **Best Practices**:
 - Analyze the scientific impact of bugs on published or pending research results
@@ -76,7 +76,7 @@
 - Include statistical tests for algorithms that should produce specific statistical properties
 - Validate numerical stability and precision requirements for scientific computations
 - Test edge cases and boundary conditions relevant to scientific domains
-- Implement integration tests that verify entire research workflows
+- Implement integration tests that verify entire research development cues
 - Include tests for data quality and validation procedures
 - Document test methodologies and their scientific rationale
 **Common Combinations**: Always combined with Validation, Scientific Computing, Quality Assurance
@@ -97,7 +97,7 @@
 - Use containerization and environment management for computational reproducibility
 - Implement proper data management with version control and access tracking
 - Plan for computational scalability from desktop to high-performance computing
-- Design APIs and interfaces that support research workflows and collaboration
+- Design APIs and interfaces that support research development cues and collaboration
 - Include mechanisms for experiment tracking, parameter management, and result archival
 - Consider long-term preservation and accessibility of research computational artifacts
 **Common Combinations**: Often combined with Data Management, High-Performance Computing, Collaboration
@@ -105,7 +105,7 @@
 ## API Changes
 **When to Apply**: Evolving research software APIs and computational interfaces
 **Core Principles**:
-- **Backward compatibility**: Maintain compatibility with existing research workflows
+- **Backward compatibility**: Maintain compatibility with existing research development cues
 - **Scientific accuracy**: API changes must not compromise scientific validity
 - **Documentation completeness**: Comprehensive API documentation for scientific users
 - **Community coordination**: Coordinate API changes with research community users
@@ -114,7 +114,7 @@
 - Provide extensive API documentation with scientific examples and use cases
 - Implement comprehensive testing including validation against scientific benchmarks
 - Coordinate with research community before making breaking changes
-- Provide migration guides that address scientific workflow implications
+- Provide migration guides that address scientific development cues implications
 - Include provenance tracking capabilities in API design
 - Design APIs that support batch processing and high-throughput scientific computing
 **Common Combinations**: Often combined with Scientific Computing, Community Engagement, Documentation

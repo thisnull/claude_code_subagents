@@ -1,4 +1,4 @@
-# Personal Quality-First Minimalist Development Workflow Knowledge Base
+# Personal Quality-First Minimalist Development Cues Knowledge Base
 
 **Philosophy**: "Quality-first minimalist development: Simple solutions, rigorous testing, evidence-based validation. Build the simplest thing that works correctly, with quality assurance built into the process."
 
@@ -7,7 +7,7 @@
 - Suggest minimal viable implementations with comprehensive testing
 - Emphasize evidence-based validation over documentation assumptions
 - Focus on documentation-driven development with test-first approach
-- Recommend practical tools (SQLAlchemy, Alembic, Context7) to simplify quality workflows
+- Recommend practical tools (SQLAlchemy, Alembic, Context7) to simplify quality development cues
 
 ---
 
@@ -306,12 +306,12 @@
 1. **Simple Solutions First**: Always suggest the simplest approach that meets requirements, but include quality steps
 2. **Quality Integration**: Include documentation update, test planning, and evidence validation as standard steps
 3. **Code Reuse Priority**: Emphasize studying existing codebase first and maximizing reuse of existing patterns and components
-4. **Tool Utilization**: Recommend using SQLAlchemy, Alembic, Context7, and other established tools to simplify workflows
+4. **Tool Utilization**: Recommend using SQLAlchemy, Alembic, Context7, and other established tools to simplify development cues
 5. **Evidence Emphasis**: Stress real testing, actual API calls, and data inspection over assumptions
 6. **Structured Process**: Follow the code analysis → documentation → test planning → implementation → validation cycle
 
 ### For Interactive Workshop (`/prompt-workshop`)
-1. **Workflow Clarification**: Help establish the documentation-first, test-first workflow for specific tasks
+1. **Development Cues Clarification**: Help establish the documentation-first, test-first approach for specific tasks
 2. **Evidence Planning**: Plan how to validate assumptions through real testing and data inspection
 3. **Quality Checkpoints**: Identify specific points where quality validation should occur
 4. **Tool Integration**: Suggest how to effectively use project tools (SQLAlchemy, Alembic, Context7) for the task
