@@ -1,47 +1,46 @@
 ---
 name: prompt-workshop
-description: 启动交互式prompt优化工作坊，通过专业的交互式对话深度分析需求并生成高度定制化的prompt。比自动refinement更精准，提供完全个性化的prompt优化体验。自动保存结果到refined-prompt/目录。
+description: Launch an interactive prompt optimization workshop that deeply analyzes requirements through professional interactive conversations and generates highly customized prompts. More precise than automated refinement, providing completely personalized prompt optimization experience. Automatically saves results to refined-prompt/ directory.
 allowed-tools: Task
-argument-hint: "<initial_idea>" (可选的初始想法或需求描述)
+argument-hint: "<initial_idea>" (optional initial idea or requirement description)
 ---
 
-🎯 **启动交互式Prompt优化工作坊**
+🎯 **Launch Interactive Prompt Optimization Workshop**
 
-通过与专业prompt工程师的深度对话，为您的具体需求打造完美prompt。
+Create perfect prompts for your specific needs through in-depth conversations with professional prompt engineers.
 
-## 工作坊特色
+## Workshop Features
 
-### 🤝 深度交互体验
-- **一对一专家咨询**: 专业prompt工程师全程指导
-- **渐进式需求挖掘**: 通过精准提问发现真实需求
-- **动态问题调整**: 根据您的回答智能调整对话方向
-- **实时建议提供**: 基于最佳实践给出专业建议
+### 🤝 Deep Interactive Experience
+- **One-on-one Expert Consultation**: Professional prompt engineer guides you throughout
+- **Progressive Requirement Discovery**: Discover real needs through precise questioning
+- **Dynamic Question Adjustment**: Intelligently adjust conversation direction based on your answers
+- **Real-time Suggestions**: Provide professional advice based on best practices
 
-### 🎨 完全定制化
-- **个性化prompt设计**: 完全基于您的具体场景定制
-- **项目工作流集成**: 自动整合PROMPT_SCENARIOS.md中的流程要求
-- **技术栈适配**: 针对您的技术环境和约束优化
-- **输出格式定制**: 精确匹配您期望的输出规格
+### 🎨 Complete Customization
+- **Personalized Prompt Design**: Fully customized based on your specific scenarios
+- **Project Workflow Integration**: Automatically integrate process requirements from PROMPT_SCENARIOS.md
+- **Technology Stack Adaptation**: Optimize for your technical environment and constraints
+- **Output Format Customization**: Precisely match your expected output specifications
 
-### 📁 自动化管理
-- **结果自动保存**: 保存到refined-prompt/目录，便于版本管理
-- **完整过程记录**: 记录原始输入、优化结果和关键决策
-- **时间戳文件名**: YYYY-MM-DD_HHMMSS.md格式便于查找
+### 📁 Automated Management
+- **Automatic Result Saving**: Save to refined-prompt/ directory for easy version management
+- **Complete Process Recording**: Record original input, optimization results, and key decisions
+- **Timestamped Filenames**: YYYY-MM-DD_HHMMSS.md format for easy searching
 
+## 🚀 Start Workshop
 
-## 🚀 开始工作坊
+Running this command will launch a conversation session with the interactive-prompt-refiner expert, creating perfect prompts through professional interactive processes.
 
-运行此命令将启动与interactive-prompt-refiner专家的对话会话，通过专业的交互式流程为您打造完美prompt。
+**Suitable Scenarios:**
+- Complex multi-step task prompt design
+- Professional domain prompts requiring deep customization
+- Critical prompt optimization for important projects
+- Scenarios with high prompt quality requirements
 
-**适合场景:**
-- 复杂的多步骤任务prompt设计
-- 需要深度定制的专业领域prompt  
-- 重要项目的关键prompt优化
-- 对prompt质量要求较高的场景
+**Preparation Suggestions:**
+- Generally understand the problem you want to solve
+- Prepare relevant project background information
+- Consider expected output types and formats
 
-**准备建议:**
-- 大致了解您要解决的问题
-- 准备相关的项目背景信息
-- 考虑期望的输出类型和格式
-
-让专业的prompt工程师为您服务！ 🎯
+Let professional prompt engineers serve you! 🎯
