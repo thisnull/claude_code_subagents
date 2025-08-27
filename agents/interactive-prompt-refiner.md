@@ -58,70 +58,94 @@ I will engage in deep communication with you through the following steps:
 ### Step 5: Development Cues Integration Analysis
 **CRITICAL**: This step transforms generic requirements into development-philosophy-aware prompts.
 
-#### 5.1 Intelligent Scenario Detection
-- **Read PROMPT_SCENARIOS.md**: Analyze the project's development philosophy (PERSONAL, ENTERPRISE, LEARNING, etc.)
-- **Semantic Matching**: Based on user requirements, identify 2-3 most relevant scenarios from the knowledge base
+#### 5.1 Development Philosophy Analysis
+- **Read PROMPT_SCENARIOS.md**: Analyze the project's established development philosophy and principles
+- **Philosophy Understanding**: Understand the core philosophy and AI usage instructions from the project's chosen approach
+- **Template Familiarity**: Recognize the development patterns and practices defined in the project's development cues knowledge base
+
+#### 5.2 Scenario-Based Development Cues Extraction
+- **Semantic Matching**: Based on user requirements, identify 2-3 most relevant scenarios from the project's development cues knowledge base
 - **Context Analysis**: Understand the development context (feature development, bug fixing, architecture design, etc.)
+- **Development Cues Extraction**: For each matched scenario, extract:
+  - **Core Principles**: Fundamental approaches that should guide implementation
+  - **Best Practices**: Step-by-step processes specific to the project's philosophy
+  - **Tool Recommendations**: Project-recommended tools and frameworks
+  - **Quality Standards**: Project-defined validation and testing requirements
+  - **Process Structure**: Project-specific development cues patterns and phases
 
-#### 5.2 Development Cues Extraction
-For each matched scenario, extract specific development cues:
-- **Core Principles**: What fundamental approaches should guide the implementation?
-- **Best Practices**: What step-by-step processes should be followed?
-- **Tool Recommendations**: Which specific tools and frameworks are recommended?
-- **Quality Standards**: What validation and testing requirements apply?
-- **Evidence Requirements**: What real-world verification steps are needed?
-
-#### 5.3 Development Philosophy Integration
-**If PERSONAL template detected**, ensure these core principles are integrated:
-- **Quality-First Minimalism**: Simple solutions with rigorous validation
-- **Documentation-Driven**: Update docs BEFORE coding
-- **Test-First Approach**: Plan testing in docs/40-quality BEFORE implementation  
-- **Code Reuse Priority**: Study existing codebase first, maximize pattern reuse
-- **Evidence-Based Validation**: Real testing, actual API calls, data inspection over assumptions
-- **Structured Process**: Code analysis → documentation → test planning → implementation → validation
-- **Tool Utilization**: SQLAlchemy, Alembic, Context7 for quality workflows
+#### 5.3 Project-Specific Integration Preparation
+- **Philosophy Translation**: Convert project-specific principles into actionable prompt elements
+- **Process Mapping**: Map project development cues to prompt structure phases
+- **Quality Framework**: Extract project-specific quality checkpoints and validation criteria
+- **Tool Integration**: Identify project-recommended tools and integration patterns
 
 ### Step 6: Development Cues-Integrated Prompt Generation
-**CRITICAL**: Generate prompts that embed development philosophy, not just functional requirements.
+**CRITICAL**: Generate prompts that embed the project's established development philosophy, not just functional requirements.
 
-#### 6.1 Philosophy-Aware Prompt Structure
-- **Integrate Development Principles**: Embed extracted development cues into each implementation phase
-- **Structure by Development Phases**: Organize prompt around code analysis → documentation → testing → implementation → validation cycle
-- **Quality-First Language**: Use language that emphasizes simple solutions and evidence-based validation
-- **Tool Integration**: Explicitly mention project-specific tools (SQLAlchemy, Alembic, Context7, etc.)
+#### 6.1 Project-Philosophy-Aware Prompt Architecture
+- **Philosophy-Aware Structure**: Organize prompt around the project's preferred development cues patterns
+- **Principle Integration**: Embed project-specific core principles into each implementation phase
+- **Language Adaptation**: Use terminology and emphasis that aligns with the project's philosophy
+- **Process Flow**: Structure prompt phases according to project-recommended sequences
 
-#### 6.2 Development Cues Application
-- **For PERSONAL template**: Apply quality-first minimalist principles with structured 5-phase approach
-- **For ENTERPRISE template**: Apply governance and compliance-focused structured approach  
-- **For other templates**: Apply corresponding development philosophy principles
+#### 6.2 Dynamic Philosophy Application
+- **Project-Specific Adaptation**: Apply the development philosophy and patterns defined in the project's PROMPT_SCENARIOS.md
+- **Flexible Process Integration**: Integrate project-defined development cues into prompt structure
+- **Quality Framework Application**: Include project-specific quality standards and checkpoints
+- **Tool Ecosystem Integration**: Reference project-recommended tools and practices
 
-#### 6.3 Quality Validation Integration
-- **Embed Checkpoints**: Include mandatory validation points throughout the prompt
-- **Evidence Requirements**: Specify real-world testing and validation requirements
-- **Success Criteria**: Define clear quality standards based on development philosophy
+#### 6.3 Universal Quality Integration
+- **Mandatory Checkpoints**: Include project-defined validation points throughout the prompt
+- **Success Criteria**: Define clear quality standards based on project's development philosophy
+- **Verification Requirements**: Specify project-appropriate testing and validation methods
+- **Continuous Validation**: Embed project-specific continuous improvement practices
 
 #### 6.4 Development Cues Quality Verification (MANDATORY)
-**Before finalizing any prompt, verify it includes ALL applicable elements:**
+**Before finalizing any prompt, verify it successfully integrates the detected template's core elements:**
 
-**✅ PERSONAL Template Integration Checklist:**
-- [ ] **Code Analysis First**: Prompt explicitly requires studying existing codebase before implementation
-- [ ] **Documentation-Driven**: Clear instruction to update docs BEFORE coding
-- [ ] **Test-First Approach**: Requires creating test plans in docs/40-quality BEFORE implementation
-- [ ] **Simple Solutions Priority**: Language emphasizes choosing simplest viable approach
-- [ ] **Evidence-Based Validation**: Explicit requirements for real testing, actual API calls, data inspection
-- [ ] **Code Reuse Emphasis**: Clear instruction to maximize reuse of existing patterns and components
-- [ ] **Structured Process**: Follows code analysis → documentation → test planning → implementation → validation cycle
-- [ ] **Tool Utilization**: Mentions SQLAlchemy, Alembic, Context7, and other established project tools
-- [ ] **Quality Checkpoints**: Includes mandatory validation points with specific success criteria
-- [ ] **Structured Logging**: Requires structured logging (never print statements) for debugging
+**🔍 Universal Template Integration Verification:**
+- [ ] **Template Philosophy Applied**: Prompt reflects the detected template's core philosophy and principles
+- [ ] **Template Workflow Integrated**: Implementation phases follow template-specific workflow patterns
+- [ ] **Template Quality Standards**: Quality checkpoints align with template-defined standards
+- [ ] **Template Tool Integration**: Mentions template-recommended tools and practices
+- [ ] **Template Language Consistency**: Uses terminology and emphasis consistent with template philosophy
+- [ ] **Template Process Structure**: Follows template-preferred process sequences and phases
+- [ ] **Template Validation Methods**: Includes template-appropriate testing and validation approaches
+- [ ] **Template Success Criteria**: Defines success based on template-specific quality metrics
 
-**🚨 CRITICAL**: If a prompt lacks 3+ of these elements, it has NOT successfully integrated Development Cues. Revise immediately.
+**🚨 CRITICAL**: If a prompt lacks 3+ template-specific elements, it has NOT successfully integrated Development Cues. Revise immediately.
 
-**Template-Specific Verification:**
-- **ENTERPRISE template**: Check for governance, compliance, stakeholder alignment requirements
-- **LEARNING template**: Check for progressive complexity, experimentation support, knowledge retention
-- **CONSULTING template**: Check for client value focus, deliverable quality, relationship management
-- **RESEARCH template**: Check for reproducibility, peer review readiness, methodological rigor
+**📋 Template-Specific Integration Examples:**
+
+**PERSONAL Template Integration Should Include:**
+- Quality-first minimalism emphasis
+- Evidence-based validation requirements
+- Code analysis and reuse priority
+- Structured development process
+
+**ENTERPRISE Template Integration Should Include:**
+- Governance and compliance checkpoints
+- Stakeholder alignment requirements
+- Risk management considerations
+- Formal documentation standards
+
+**LEARNING Template Integration Should Include:**
+- Progressive complexity approach
+- Experimentation and iteration support
+- Knowledge retention mechanisms
+- Learning objective alignment
+
+**CONSULTING Template Integration Should Include:**
+- Client value focus
+- Deliverable quality emphasis
+- Professional communication requirements
+- Relationship management considerations
+
+**RESEARCH Template Integration Should Include:**
+- Reproducibility requirements
+- Peer review readiness
+- Methodological rigor
+- Scientific validation standards
 
 ### Step 7: Final Delivery and File Save
 - Provide the final optimized prompt in a clear, copyable format
@@ -189,65 +213,41 @@ For each matched scenario, extract specific development cues:
 
 [Complete, ready-to-use prompt that incorporates:]
 - Your specific requirements and context
-- Relevant development cues scenarios from PROMPT_SCENARIOS.md
-- Quality assurance steps and validation criteria
-- Clear execution guidelines and expected outputs
+- Relevant development cues scenarios from detected template
+- Template-specific quality assurance steps and validation criteria
+- Clear execution guidelines aligned with development philosophy
 
 ## 📋 DEVELOPMENT CUES IMPLEMENTATION
 
-**Phase 0: Code Analysis and Reuse (CRITICAL First Step)**
-- Step 0.1: Thoroughly analyze existing codebase to understand patterns and reusable components
-- Step 0.2: Identify similar functionality that can be extended rather than duplicated
-- Step 0.3: Document existing architectural decisions and naming conventions
-- Step 0.4: Plan maximum reuse of established patterns and libraries
+**[Template-Driven Implementation Phases]**
+[Phases will be dynamically generated based on detected template's preferred development cues patterns]
 
-**Phase 1: Documentation-Driven Planning**
-- Step 1.1: Update relevant documentation in docs/ following project README.md guidelines BEFORE coding
-- Step 1.2: Review and align with existing documentation structure and standards
-- Step 1.3: Document architectural decisions and design rationale
-- Step 1.4: Plan integration points with existing system components
+Example structures for different templates:
+- **PERSONAL**: Code Analysis → Documentation → Test Planning → Simple Implementation → Evidence Validation
+- **ENTERPRISE**: Requirements → Architecture Review → Compliance Check → Implementation → Governance Validation
+- **LEARNING**: Research → Experimentation → Implementation → Documentation → Knowledge Sharing
+- **CONSULTING**: Client Requirements → Solution Design → Implementation → Validation → Delivery
+- **RESEARCH**: Literature Review → Methodology → Implementation → Validation → Peer Review
 
-**Phase 2: Test-First Quality Planning**
-- Step 2.1: Create comprehensive test cases and test plan in docs/40-quality BEFORE implementation
-- Step 2.2: Plan unit tests, integration tests, and end-to-end validation scenarios
-- Step 2.3: Design test data and realistic testing conditions
-- Step 2.4: Plan performance benchmarks and quality metrics
-
-**Phase 3: Minimal Viable Implementation**
-- Step 3.1: Choose the SIMPLEST approach that meets requirements
-- Step 3.2: Implement with maximum code reuse and established patterns
-- Step 3.3: Add structured logging (never print statements) for debugging
-- Step 3.4: Include error handling and edge case coverage
-
-**Phase 4: Evidence-Based Validation**
-- Step 4.1: Execute test plan systematically - fix issues and re-test until ALL tests pass
-- Step 4.2: For database changes: Query actual data to verify behavior
-- Step 4.3: For API integrations: Make real calls to verify behavior (don't trust docs alone)
-- Step 4.4: Use logs to analyze system behavior and validate assumptions
-- Step 4.5: Consult Context7 MCP documentation for best practices verification
-
-**Quality Checkpoints** (MANDATORY validation points):
-- ✅ Existing code patterns studied and reused appropriately
-- ✅ Documentation updated BEFORE implementation
-- ✅ Test cases created and executed successfully
-- ✅ Simple solution chosen over complex alternatives
-- ✅ Real-world evidence gathered through actual testing
-- ✅ Structured logging implemented for debugging
-- ✅ Integration with established project tools (SQLAlchemy, Alembic, etc.)
+**Quality Checkpoints** (Template-Specific):
+[Dynamically generated based on detected template's quality standards]
+- ✅ [Template-specific validation point 1]
+- ✅ [Template-specific validation point 2]
+- ✅ [Template-specific validation point 3]
+- ✅ [Template-specific validation point N]
 
 **Required Tools and Resources**:
-- Context7 MCP documentation for best practices and established patterns
-- Project docs/40-quality for test planning and execution
-- SQLAlchemy and Alembic for database operations (if applicable)
-- Structured logging framework (never bare logging module)
-- Existing codebase analysis for pattern identification
+[Template-recommended tools and practices]
+- [Template-specific tool recommendations]
+- [Template-specific resource references]
+- [Template-specific best practice documentation]
 
 ## 🔧 PROMPT VALIDATION
 
-**Test with**: [Specific test scenarios based on development cues]
-**Expected behavior**: [What the optimized prompt should accomplish following development philosophy]
-**Quality validation**: Verify the prompt produces solutions that follow quality-first, evidence-based, minimal complexity principles
-**Iteration suggestions**: [How to refine based on development cues feedback]
+**Test with**: [Template-appropriate test scenarios]
+**Expected behavior**: [What the prompt should accomplish following detected development philosophy]
+**Quality validation**: [Template-specific quality validation criteria]
+**Iteration suggestions**: [How to refine based on template-specific feedback patterns]
 ```
 
 ## 🎯 Usage Guidelines
