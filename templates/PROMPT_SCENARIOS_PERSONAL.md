@@ -21,11 +21,16 @@
 - **Simple implementation**: Choose the simplest approach that meets requirements
 - **Evidence validation**: Verify everything works through real testing, not assumptions
 **Best Practices**:
+- **Step 0: Code Analysis** - Before any implementation, thoroughly read existing codebase to understand patterns and reusable components
 - **Step 1: Documentation Update** - Review and update relevant documentation in docs/ following project README.md guidance
 - **Step 2: Test Planning** - Create comprehensive test cases and test plan in docs/40-quality before coding
-- **Step 3: Simple Implementation** - Write the minimum code needed with adequate logging throughout
+- **Step 3: Simple Implementation** - Write the minimum code needed with maximum reuse of existing code patterns
 - **Step 4: Test Execution** - Execute test plan systematically, fix issues, re-test until all tests pass
 - **Step 5: Evidence Verification** - For database changes: query real data; for APIs: make actual calls
+- **Code Reuse Priority**: Always study existing code first to identify reusable functions, classes, and patterns
+- Follow existing code conventions, naming patterns, and architectural decisions consistently
+- Prefer extending or composing existing components over creating new ones from scratch
+- When similar functionality exists, refactor existing code to be more generic rather than duplicating
 - Add structured logging (not print statements) to enable effective debugging
 - When using third-party APIs: actually call them to verify behavior, don't trust documentation alone
 - Consult Context7 MCP documentation for best practices and established patterns
@@ -59,11 +64,14 @@
 **Best Practices**:
 - Verify that documentation was updated appropriately for changes
 - Check that test cases exist in docs/40-quality and actually test the functionality
+- **Code Reuse Validation**: Verify that existing code patterns and components were properly reused rather than duplicated
 - Ensure adequate structured logging exists for debugging
 - For database changes: verify Model-First approach and proper Alembic usage
 - For API integrations: confirm actual API calls were made during development
 - Review for proper error handling and edge case coverage
-- Ensure changes are the simplest viable solution
+- Ensure changes are the simplest viable solution and follow existing code patterns
+- Check that new code follows established naming conventions and architectural decisions
+- Validate that similar existing functionality wasn't unnecessarily duplicated
 **Common Combinations**: Often combined with Documentation Validation, Test Review
 
 ## Testing
@@ -297,9 +305,10 @@
 ### For Automated Refinement (`/refine-prompt`)
 1. **Simple Solutions First**: Always suggest the simplest approach that meets requirements, but include quality steps
 2. **Quality Integration**: Include documentation update, test planning, and evidence validation as standard steps
-3. **Tool Utilization**: Recommend using SQLAlchemy, Alembic, Context7, and other established tools to simplify workflows
-4. **Evidence Emphasis**: Stress real testing, actual API calls, and data inspection over assumptions
-5. **Structured Process**: Follow the documentation → test planning → implementation → validation cycle
+3. **Code Reuse Priority**: Emphasize studying existing codebase first and maximizing reuse of existing patterns and components
+4. **Tool Utilization**: Recommend using SQLAlchemy, Alembic, Context7, and other established tools to simplify workflows
+5. **Evidence Emphasis**: Stress real testing, actual API calls, and data inspection over assumptions
+6. **Structured Process**: Follow the code analysis → documentation → test planning → implementation → validation cycle
 
 ### For Interactive Workshop (`/prompt-workshop`)
 1. **Workflow Clarification**: Help establish the documentation-first, test-first workflow for specific tasks
@@ -312,9 +321,10 @@
 
 **Personal Quality-First AI Analysis**:
 - Primary Context: Feature Development + API Changes (documentation-driven, test-first approach)
+- Code Analysis Step: First study existing authentication patterns and user management code in the project
 - Documentation Step: Update API docs and authentication section following docs/README.md
 - Test Planning: Create authentication test cases in docs/40-quality before coding
-- Implementation: Use simple, proven authentication library with adequate logging
+- Implementation: Reuse existing authentication patterns, extend current user models if available
 - Evidence Validation: Actually test authentication calls, don't just check code logic
-- Database Integration: Use SQLAlchemy Model-First if user data storage needed
+- Database Integration: Use SQLAlchemy Model-First, extend existing user tables if they exist
 - Real Testing: Make actual authenticated and unauthenticated API calls to verify behavior
