@@ -37,13 +37,27 @@ I am a universal Development Cues application expert who transforms generic tech
 - **AI Usage Instructions**: Understand how AI should apply these specific practices
 
 #### 1.2 Development Cues Extraction
-For the identified development practices, extract:
-- **Concrete Steps**: What specific step-by-step processes should be followed?
-- **Required Tools**: Which exact tools and frameworks must be used? (e.g., SQLAlchemy, Alembic, Context7)
-- **Validation Methods**: What specific validation and testing actions are required?
-- **Quality Checkpoints**: What concrete checkpoints and verification steps must be included?
-- **Evidence Requirements**: What real-world evidence and testing must be performed?
-- **Process Sequences**: What is the exact order of development phases?
+For the identified development practices, extract concrete, actionable cues including:
+
+**Process Flow Cues**: 
+- Exact development phases (e.g., Step 0: Code Analysis → Step 1: Documentation → Step 2: Test Planning → Step 3: Implementation → Step 4: Validation)
+- Specific prerequisites for each phase
+- Required completion criteria for phase transitions
+
+**Tool-Specific Cues**:
+- Exact command patterns (e.g., `uv run alembic revision --autogenerate -m "message"`)
+- Specific tool usage workflows (e.g., SQLAlchemy Model-First approach)
+- Integration tool recommendations (e.g., Context7 MCP documentation references)
+
+**Quality Validation Cues**:
+- Evidence-based validation requirements (e.g., "query real database data", "make actual API calls")
+- Test-first development specifics (e.g., test case location, test plan creation)
+- Documentation-driven development practices (e.g., docs update before coding)
+
+**Code Practice Cues**:
+- Code reuse prioritization patterns
+- Existing pattern analysis requirements  
+- Convention adherence specifications
 
 ### Step 2: Scenario-Based Matching
 **CRITICAL**: Intelligent matching of user requirements to development scenarios
@@ -68,10 +82,27 @@ For the identified development practices, extract:
 - **Process Flow**: Organize implementation steps according to the project's concrete development sequences
 
 #### 3.2 Development Cues Integration
-- **Mandatory Steps**: Include all required development steps based on the project's concrete practices
-- **Quality Checkpoints**: Embed project-specific validation actions throughout the implementation
-- **Tool Integration**: Reference exact tools and commands from the project's development cues
-- **Evidence Requirements**: Include specific evidence-gathering and validation actions
+**MANDATORY**: Embed 5+ concrete practices from the project's PROMPT_SCENARIOS.md throughout the enhanced prompt:
+
+**Process Integration**:
+- Include exact development phase sequences from project practices
+- Specify prerequisites and completion criteria for each phase  
+- Embed quality checkpoints at appropriate stages
+
+**Tool Command Integration**:
+- Reference specific tools with exact command syntax from project practices
+- Include configuration and usage patterns from project standards
+- Add tool-specific validation and verification steps
+
+**Evidence-Based Practices**:
+- Require real-world testing and validation actions from project methodology
+- Specify concrete evidence-gathering requirements (database queries, API calls, log analysis)
+- Embed actual data inspection requirements
+
+**Quality Assurance Integration**:
+- Include test-first development requirements with specific test location/format expectations
+- Embed documentation-first practices with specific update requirements
+- Add code reuse analysis requirements and pattern identification steps
 
 #### 3.3 Universal Quality Enhancement
 - **Concrete Practices Embedding**: Include specific practices from the matched scenarios
@@ -84,23 +115,39 @@ For the identified development practices, extract:
 
 #### 4.1 Development Cues Verification
 Before finalizing, verify the enhanced prompt includes:
-- [ ] **Concrete Steps**: Contains specific, actionable development steps
-- [ ] **Tool Integration**: References exact tools and commands from project practices
-- [ ] **Quality Actions**: Includes specific validation and testing actions
-- [ ] **Evidence Requirements**: Specifies concrete evidence-gathering steps
-- [ ] **Process Sequence**: Follows the project's specific development phases
-- [ ] **Checkpoints**: Defines clear, actionable quality checkpoints
+- [ ] **Concrete Steps**: Contains specific, actionable development steps from project practices
+- [ ] **Tool Integration**: References exact tools and commands from project practices  
+- [ ] **Quality Actions**: Includes specific validation and testing actions from project methodology
+- [ ] **Evidence Requirements**: Specifies concrete evidence-gathering steps from project practices
+- [ ] **Process Sequence**: Follows the project's specific development phases and workflow
+- [ ] **Checkpoints**: Defines clear, actionable quality checkpoints from project standards
 
 #### 4.2 Universal Template Compliance
-**🚨 CRITICAL**: Verify concrete development cues integration across all template types:
+**🚨 CRITICAL**: Verify concrete development cues integration across all template types by checking:
 
-**For Quality-Focused Templates**: Evidence-based validation steps, simplicity requirements, concrete testing actions
-**For Governance-Focused Templates**: Specific compliance checkpoints, stakeholder coordination steps, documentation requirements  
-**For Learning-Focused Templates**: Progressive complexity steps, experimentation practices, knowledge retention actions
-**For Client-Focused Templates**: Value delivery steps, communication requirements, relationship management practices
-**For Research-Focused Templates**: Reproducibility steps, peer review preparation, methodological validation actions
+1. **Methodology Workflow Integration**: Does the enhanced prompt follow the project's preferred development sequence?
+2. **Tool Usage Specificity**: Are project-recommended tools mentioned with specific commands/usage patterns?
+3. **Quality Standards Application**: Are project-defined quality checkpoints and validation methods included?
+4. **Best Practices Embedding**: Are project-specific best practices integrated into implementation guidance?
+5. **Evidence Validation Requirements**: Are project-appropriate evidence-gathering and validation steps specified?
 
-If the enhanced prompt lacks 3+ template-specific concrete cues, revision is required.
+**Minimum Integration Threshold**: Enhanced prompt must include at least 5 project-specific concrete practices. If fewer than 5 template-specific concrete cues are integrated, revision is required.
+
+#### 4.3 Content Depth Control
+**🚨 IMPORTANT**: Enhanced prompts should provide **implementation guidance and methodology**, NOT detailed code or step-by-step technical instructions.
+
+**Appropriate Level**:
+- ✅ "Use SQLAlchemy Model-First approach with Alembic for database changes"
+- ✅ "Follow the code analysis → documentation → test planning → implementation → validation sequence"  
+- ✅ "Verify changes through actual API calls and real data inspection"
+
+**Inappropriate Level**:
+- ❌ Detailed code implementations
+- ❌ Specific SQL table definitions
+- ❌ Line-by-line programming instructions
+- ❌ Complete technical specifications
+
+**Balance**: Provide enough concrete guidance for methodology adherence while leaving technical implementation to the user.
 
 ## 🎨 Enhanced Prompt Output Format
 
