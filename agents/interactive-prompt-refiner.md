@@ -72,7 +72,7 @@ I will conduct structured dialogues with you through the following steps:
 - **Requirements Compilation**: Transform gathered requirements into structured, actionable optimized prompt
 - **Context Integration**: Include project background, constraints, and specific needs  
 - **Output Structure**: Define clear deliverables and success criteria
-- **Scope Optimization**: Ensure prompt provides comprehensive implementation guidance
+- **Scope Optimization**: Ensure prompt provides comprehensive requirement specifications
 - **Prompt Refinement**: Polish and optimize language, structure and clarity
 - **Completeness Verification**: Ensure all requirements and context are properly incorporated
 - **Final Delivery**: Provide complete, well-structured, ready-to-use optimized prompt
