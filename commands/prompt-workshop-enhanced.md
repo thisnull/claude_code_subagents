@@ -1,60 +1,58 @@
 ---
 name: prompt-workshop-enhanced
-description: Launch an interactive prompt optimization workshop with dual-agent orchestration. Uses Task tool to coordinate interactive-prompt-refiner and development-cues-applier in sequence for optimal prompt generation with Development Cues integration. Records complete workflow for reference.
+description: Launch an interactive prompt optimization workshop with dual-agent orchestration. Uses Task tool to coordinate interactive-prompt-refiner and development-cues-applier in sequence for optimal prompt generation with Development Cues integration. Outputs single optimized prompt document.
 allowed-tools: Task, Write
 argument-hint: "<initial_idea>" (optional initial idea or requirement description)
 ---
 
-🎯 **Advanced Interactive Prompt Optimization Workshop**
+🎯 **Interactive Prompt Optimization Workshop**
 
-Orchestrate a complete prompt optimization workflow using specialized agents in sequence with full debugging capability.
+Refine and optimize your prompts through dual-agent collaboration with interactive requirements analysis and project methodology enhancement.
 
-## 🔄 Dual-Agent Workflow with Process Recording
+## 🔄 Dual-Agent Workflow
 
-I will orchestrate two specialized agents in sequence and record the complete process for your reference:
+I will orchestrate two specialized agents in sequence to create your optimized prompt:
 
 ### Phase 1: Requirements Collection & Basic Prompt Generation
 **Agent**: `interactive-prompt-refiner`
-- Deep conversational requirements analysis
-- Project context understanding  
-- Basic prompt structure creation
+- Interactive requirements elicitation
+- Project context analysis  
+- Initial prompt structuring
 - Quality scope control
 
 ### Phase 2: Development Cues Enhancement
 **Agent**: `development-cues-applier`  
 - PROMPT_SCENARIOS.md analysis
 - Project methodology integration
-- Concrete practices embedding
+- Concrete practices integration
 - Final prompt enhancement
 
-### Phase 3: Integration & Complete Documentation
+### Phase 3: Final Integration
 **Orchestrator**: This slash command
-- Combine agent outputs
-- Generate three-stage documentation
-- Save complete workflow record
+- Combine both agent outputs into single document
+- Generate final optimized prompt
+- Save as ready-to-use file
 
 ## 🎯 Orchestration Process
 
 I will:
-1. **Initialize Session**: Create timestamped workflow record
-2. **Launch Requirements Agent**: Use Task tool to spawn `interactive-prompt-refiner`
+1. **Launch Requirements Agent**: Use Task tool to spawn `interactive-prompt-refiner`
    - If user provided initial idea: Pass it as context
    - If no initial idea: Instruct agent to begin structured questioning immediately
-3. **Launch Enhancement Agent**: Use Task tool to spawn `development-cues-applier`
+2. **Launch Enhancement Agent**: Use Task tool to spawn `development-cues-applier`
    - Pass Phase 1 results as input for enhancement
    - Preserve all original details while adding development methodology
-4. **Generate Final Output**: 
-   - Create three-stage documentation
-   - Save workflow record with agent inputs/outputs
+3. **Generate Final Output**: 
+   - Create single comprehensive prompt document
+   - Include both requirements analysis and development methodology
+   - Save as ready-to-execute prompt
 
 ## 🚀 Expected Outcome
 
 You'll receive:
-- **Interactive consultation** for precise requirements
-- **Project-methodology-aware prompt** with concrete Development Cues
-- **Three-stage documentation** showing complete transformation
-- **Workflow record** with agent inputs/outputs for reference
-- **Ready-to-execute** optimized prompts
+- **Interactive requirements session** for precise requirements
+- **Comprehensive enhanced prompt** integrating requirements analysis and development methodology
+- **Ready-to-execute** comprehensive prompt document
 
 ## 💡 Usage
 
@@ -64,38 +62,21 @@ Simply provide your initial idea or requirement:
 /prompt-workshop-enhanced "Add authentication to my API"
 ```
 
-## 📄 Workflow Record Structure
+## 📄 Output File
 
-Each run creates a workflow record: `refined-prompt/workflow-YYYY-MM-DD_HHMMSS.md`
+Each run creates a single optimized prompt: `refined-prompt/optimized-prompt-YYYY-MM-DD_HHMMSS.md`
 
 ```markdown
-# 📄 PROMPT WORKSHOP WORKFLOW RECORD
+# 🎯 OPTIMIZED PROMPT
 
-## Session Info
-- **Timestamp**: YYYY-MM-DD HH:MM:SS
-- **User Input**: [Original request]
-- **Orchestrator**: prompt-workshop-enhanced
+## 📋 Requirements Analysis
+[Complete analysis from interactive-prompt-refiner]
 
-## Phase 1: Requirements Collection
-### Input to interactive-prompt-refiner:
-[What was sent to the agent]
+## 🚀 Development-Enhanced Implementation Guide
+[Enhanced implementation with project methodology from development-cues-applier]
 
-### Output from interactive-prompt-refiner:
-[Complete requirements analysis and basic prompt]
-
-## Phase 2: Development Cues Enhancement  
-### Input to development-cues-applier:
-[Basic prompt + context passed to enhancement agent]
-
-### Output from development-cues-applier:
-[Enhanced prompt with development methodology]
-
-## Final Result
-### Generated Documentation:
-[Reference to the main output file]
-
-### Process Summary:
-[Brief summary of the workflow completion]
+## ✅ Ready-to-Execute Instructions
+[Final consolidated prompt ready for immediate use]
 ```
 
 ---
@@ -104,24 +85,20 @@ Each run creates a workflow record: `refined-prompt/workflow-YYYY-MM-DD_HHMMSS.m
 
 I am the **orchestration coordinator**. I will:
 
-1. **Initialize Session**
-   - Create timestamped workflow record file
-   - Begin dual-agent process
-
-2. **Task Tool Spawn 1**: interactive-prompt-refiner
+1. **Task Tool Spawn 1**: interactive-prompt-refiner
    - **If user provided initial idea**: Pass as context with instruction to build upon it
    - **If no initial idea provided**: Send instruction to begin immediate structured questioning with these prompts:
      * "What specific task do you want Claude to help you accomplish?"
      * "What is your project context and requirements?"
      * "What should the final prompt enable Claude to do?"
 
-3. **Task Tool Spawn 2**: development-cues-applier  
+2. **Task Tool Spawn 2**: development-cues-applier  
    - **Input**: Pass complete Phase 1 results with project context
    - **Instruction**: Enhance the basic prompt while preserving all original details
 
-4. **Generate Results**
-   - Create three-stage documentation
-   - Complete workflow record with all agent inputs/outputs
-   - Present final optimized prompt
+3. **Generate Final Document**
+   - Combine both agent outputs into comprehensive prompt
+   - Structure as requirements + enhanced implementation
+   - Save as single ready-to-use file
 
-Let's begin the prompt optimization workshop! 🎯
+Let's create your optimized prompt! 🎯
