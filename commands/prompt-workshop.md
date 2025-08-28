@@ -1,46 +1,86 @@
 ---
 name: prompt-workshop
-description: Launch an interactive prompt optimization workshop that deeply analyzes requirements through professional interactive conversations and generates highly customized prompts. More precise than automated refinement, providing completely personalized prompt optimization experience. Automatically saves results to refined-prompt/ directory.
-allowed-tools: Task
+description: Launch interactive prompt optimization workshop. Uses Task tool to spawn interactive-prompt-refiner for comprehensive requirements analysis and prompt generation. Outputs optimized prompt document.
+allowed-tools: Task, Write
 argument-hint: "<initial_idea>" (optional initial idea or requirement description)
 ---
 
-🎯 **Launch Interactive Prompt Optimization Workshop**
+🎯 **Interactive Prompt Optimization Workshop**
 
-Create perfect prompts for your specific needs through in-depth conversations with professional prompt engineers.
+Refine and optimize your prompts through professional interactive requirements analysis and customized prompt generation.
 
-## Workshop Features
+## 🤝 Interactive Workflow
 
-### 🤝 Deep Interactive Experience
-- **One-on-one Expert Consultation**: Professional prompt engineer guides you throughout
-- **Progressive Requirement Discovery**: Discover real needs through precise questioning
-- **Dynamic Question Adjustment**: Intelligently adjust conversation direction based on your answers
-- **Real-time Suggestions**: Provide professional advice based on best practices
+This command uses the `interactive-prompt-refiner` agent for comprehensive prompt optimization:
 
-### 🎨 Complete Customization
-- **Personalized Prompt Design**: Fully customized based on your specific scenarios
-- **Project Workflow Integration**: Automatically integrate process requirements from PROMPT_SCENARIOS.md
-- **Technology Stack Adaptation**: Optimize for your technical environment and constraints
-- **Output Format Customization**: Precisely match your expected output specifications
+### Phase 1: Requirements Collection & Prompt Generation
+**Agent**: `interactive-prompt-refiner`
+- Interactive requirements elicitation
+- Project context analysis  
+- Complete prompt generation
+- Quality optimization
 
-### 📁 Automated Management
-- **Automatic Result Saving**: Save to refined-prompt/ directory for easy version management
-- **Complete Process Recording**: Record original input, optimization results, and key decisions
-- **Timestamped Filenames**: YYYY-MM-DD_HHMMSS.md format for easy searching
+### Phase 2: Final Output
+**Orchestrator**: This slash command
+- Save optimized prompt to file
+- Generate comprehensive prompt document
+- Ready-to-use prompt delivery
 
-## 🚀 Start Workshop
+## 🎯 Process
 
-Running this command will launch a conversation session with the interactive-prompt-refiner expert, creating perfect prompts through professional interactive processes.
+I will:
+1. **Launch Interactive Agent**: Use Task tool to spawn `interactive-prompt-refiner`
+   - Instruct agent to conduct multi-round interactive session with user
+   - Agent will ask questions and wait for user responses before proceeding
+   - Complete full requirements gathering and prompt generation process
+2. **Generate Output**: 
+   - Save interactive-prompt-refiner results to file
+   - Create comprehensive optimized prompt document
+   - Deliver ready-to-use prompt
 
-**Suitable Scenarios:**
-- Complex multi-step task prompt design
-- Professional domain prompts requiring deep customization
-- Critical prompt optimization for important projects
-- Scenarios with high prompt quality requirements
+## 🚀 Expected Outcome
 
-**Preparation Suggestions:**
-- Generally understand the problem you want to solve
-- Prepare relevant project background information
-- Consider expected output types and formats
+You'll receive:
+- **Interactive requirements session** for precise requirements
+- **Complete optimized prompt** from interactive analysis
+- **Ready-to-use** prompt document for immediate application
 
-Let professional prompt engineers serve you! 🎯
+## 💡 Usage
+
+Simply provide your initial idea or requirement:
+
+```
+/prompt-workshop "Add authentication to my API"
+```
+
+## 📄 Output File
+
+Each run creates an optimized prompt document: `refined-prompt/optimized-prompt-YYYY-MM-DD_HHMMSS.md`
+
+```markdown
+# 🎯 OPTIMIZED PROMPT
+
+## 📋 Interactive Requirements Analysis
+[Complete output from interactive-prompt-refiner agent]
+
+## ✅ Ready-to-Execute Instructions
+[Final optimized prompt ready for immediate use]
+```
+
+---
+
+## 🤖 Agent Logic
+
+I am the **prompt optimization coordinator**. I will:
+
+1. **Task Tool Spawn**: interactive-prompt-refiner
+   - **Instruction**: Conduct complete multi-round interactive session with user
+   - **Process**: Ask questions, wait for responses, refine understanding iteratively  
+   - **Completion**: Only finish when comprehensive requirements have been gathered through dialogue
+
+2. **Generate Final Document**
+   - Save interactive-prompt-refiner output directly
+   - Structure as comprehensive optimized prompt
+   - Save as ready-to-use file
+
+Let's create your optimized prompt! 🎯
