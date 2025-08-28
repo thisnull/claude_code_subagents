@@ -37,8 +37,9 @@ I will orchestrate two specialized agents in sequence to create your optimized p
 
 I will:
 1. **Launch Requirements Agent**: Use Task tool to spawn `interactive-prompt-refiner`
-   - If user provided initial idea: Pass it as context
-   - If no initial idea: Instruct agent to begin structured questioning immediately
+   - Instruct agent to conduct multi-round interactive session with user
+   - Agent will ask questions and wait for user responses before proceeding
+   - Only move to Phase 2 after interactive requirements gathering is complete
 2. **Launch Enhancement Agent**: Use Task tool to spawn `development-cues-applier`
    - Pass Phase 1 results as input for enhancement
    - Preserve all original details while adding development methodology
@@ -86,11 +87,9 @@ Each run creates a single optimized prompt: `refined-prompt/optimized-prompt-YYY
 I am the **orchestration coordinator**. I will:
 
 1. **Task Tool Spawn 1**: interactive-prompt-refiner
-   - **If user provided initial idea**: Pass as context with instruction to build upon it
-   - **If no initial idea provided**: Send instruction to begin immediate structured questioning with these prompts:
-     * "What specific task do you want Claude to help you accomplish?"
-     * "What is your project context and requirements?"
-     * "What should the final prompt enable Claude to do?"
+   - **Instruction**: Conduct complete multi-round interactive session with user
+   - **Process**: Ask questions, wait for responses, refine understanding iteratively  
+   - **Completion**: Only finish when comprehensive requirements have been gathered through dialogue
 
 2. **Task Tool Spawn 2**: development-cues-applier  
    - **Input**: Pass complete Phase 1 results with project context
