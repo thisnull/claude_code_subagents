@@ -59,10 +59,9 @@ I will engage in deep communication with you through the following steps:
 - **Requirements Compilation**: Transform gathered requirements into structured, actionable prompt foundation
 - **Context Integration**: Include project background, constraints, and specific needs  
 - **Output Structure**: Define clear deliverables and success criteria
-- **Quality Boundaries**: Ensure prompt requests implementation guidance, NOT detailed code or specifications
+- **Requirements Scope Control**: Ensure prompt requests implementation guidance, NOT detailed code or specifications
 - **Agent Coordination**: Invoke development-cues-applier with the basic prompt and project context
-- **Enhancement Integration**: Receive and integrate Development Cues-enhanced methodology guidance
-- **Quality Control**: Verify enhanced prompt maintains appropriate guidance level without excessive technical detail
+- **Development Cues Integration**: Receive and integrate Development Cues-enhanced methodology guidance
 - **Fallback Handling**: Provide basic optimized version if enhancement fails
 
 ### Step 6: Final Delivery and Three-Stage Documentation
